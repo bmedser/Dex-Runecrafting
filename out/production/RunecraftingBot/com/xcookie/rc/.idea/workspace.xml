@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="efc11165-9cfa-41cf-8e25-7ecc78eb8ad8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Root.java" beforeDir="false" afterPath="$PROJECT_DIR$/Root.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/anyPouchesFull.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/fillPouches.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/findMaster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/goToAltar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/hasPouches.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/haveRunes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/isHitpointsAboveValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/isInZMI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/isInventoryFull.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/isLadderClimbed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/noRunesInBank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/restockEssence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/runToZMI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/tradeMaster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branch/withdrawRunes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/Sleep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/checkInventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/descendLadder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/emptyPouches.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/failedFill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/failedFindMaster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/failedTraverseAltar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/interactAltar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/moveMouseToObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/stopBot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/traverseAltar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/traverseCWBank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/traverseEniola.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/traverseLadder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaf/traverseToZMIOutside.java" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CloseBank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/s.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenBank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>package please.add.your.pkg;</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>package please.add.your.pkg;</replace>
+      <replace>package com.xcookie.bots.zmi.branch;</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/OpenBank.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="823" />
+    <option name="y" value="312" />
+    <option name="width" value="1289" />
+    <option name="height" value="704" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ZMI-Runner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZMI-Runner" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZMI-Runner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZMI-Runner" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="efc11165-9cfa-41cf-8e25-7ecc78eb8ad8" name="Default Changelist" comment="" />
+      <created>1564036894334</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1564036894334</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="823" y="312" width="1289" height="704" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2489829" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24934383" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Statistic" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.48738533" visible="true" weight="0.3266055" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32816538" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.43" visible="true" weight="0.11369509" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49730977" weight="0.3294423" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.57" side_tool="true" weight="0.32864675" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.20538461" weight="0.28036177" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3294423" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.06736658" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" weight="0.15706806" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32923076" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/s.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenBank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CloseBank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,28 @@
+<manifest>
+
+    <main-class>com.xcookie.rc.Main</main-class>
+    <name>Dex Runecrafting Bot</name>
+    <tag-line>Craft runes for you!</tag-line>
+    <description>Runecrafting bot</description>
+    <version>1.1.0</version>
+
+    <compatibility>
+        <game-type>OSRS</game-type>
+    </compatibility>
+
+    <categories>
+        <category>RUNECRAFTING</category>
+    </categories>
+    <tags>
+        <tag>ZMI / Ourania altar</tag>
+        <tag>Nature runes</tag>
+<!--        <tag></tag>
+        <tag></tag>
+        <tag></tag>-->
+    </tags>
+
+    <internal-id>DexRC</internal-id>
+    <hidden>false</hidden>
+    <access>public</access>
+
+</manifest>
