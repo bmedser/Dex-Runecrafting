@@ -20,6 +20,6 @@ public class WithdrawItems extends LeafTask {
         setDefaultQuantity(ALL);
 //        setDefaultWithdrawQuantity(Bank.DefaultWithdrawQuantity.ALL);
 
-        Bank.withdraw(Items.pureEss, 2147483647);
+        Bank.withdraw("Pure essence", 2147483647);
     }
 }

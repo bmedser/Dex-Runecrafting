@@ -19,8 +19,8 @@ public class traverseEniola extends LeafTask {
     public void execute() {
         pathToEniola = RegionPath.buildTo(Locations.ZMIBank);
         pathToEniola.step();
-        //Protect from range
-        Prayer.PROTECT_FROM_MISSILES.activate();
+        //Protect from range //TODO:
+//        Prayer.PROTECT_FROM_MISSILES.activate();
 
         //run to eniola
 /*        if (pathToEniola.step()) {
