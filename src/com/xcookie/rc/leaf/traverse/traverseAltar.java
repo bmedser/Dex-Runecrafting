@@ -33,7 +33,7 @@ public class traverseAltar extends LeafTask {
 //            pathToAltar = BresenhamPath.buildTo(Locations.ZMIWorldLadder);
                 webPath = Traversal.getDefaultWeb().getPathBuilder().buildTo(Locations.ZMIRCAltar);
             else
-                geLogger().warn("I couldn't find altar");
+                getLogger().warn("I couldn't find altar");
 
             if (Locations.ZMIRCAltar.contains(Players.getLocal())) {
                 new CraftRunes();
