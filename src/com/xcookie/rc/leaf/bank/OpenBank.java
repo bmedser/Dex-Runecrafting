@@ -1,21 +1,15 @@
 package com.xcookie.rc.leaf.bank;
 
-import com.runemate.game.api.hybrid.entities.GameObject;
 import com.runemate.game.api.hybrid.entities.Npc;
 import com.runemate.game.api.hybrid.local.Camera;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Bank;
-import com.runemate.game.api.hybrid.local.hud.interfaces.Interfaces;
-import com.runemate.game.api.hybrid.location.Coordinate;
-import com.runemate.game.api.hybrid.location.navigation.web.vertex_types.utilities.NpcBankVertex;
-import com.runemate.game.api.hybrid.queries.NpcQueryBuilder;
-import com.runemate.game.api.hybrid.region.GameObjects;
+import com.runemate.game.api.hybrid.queries.BankQueryBuilder;
+import com.runemate.game.api.hybrid.queries.results.LocatableEntityQueryResults;
+import com.runemate.game.api.hybrid.region.Banks;
 import com.runemate.game.api.hybrid.region.Npcs;
-import com.runemate.game.api.hybrid.region.Players;
-import com.runemate.game.api.osrs.local.hud.interfaces.Prayer;
 import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
 import com.xcookie.rc.assets.NPC;
-import com.xcookie.rc.assets.Objects;
 import com.xcookie.rc.leaf.traverse.traverseEniola;
 
 /**
@@ -25,26 +19,21 @@ import com.xcookie.rc.leaf.traverse.traverseEniola;
 public class OpenBank extends LeafTask {
 
     private traverseEniola traverseeniola = new traverseEniola();
-    private GameObject elionaNPC;
+    private Npc eniolaNPC;
     @Override
     public void execute() {
 
         try {
-            elionaNPC = GameObjects.newQuery().names("Eliona").ids(7417).on(NPC.bankCoord).results().first();
-
-//            if (Prayer.PROTECT_FROM_MISSILES.isActivated()) Prayer.PROTECT_FROM_MISSILES.deactivate(); //TODO: change to inventory tab?
-
-            if (/*elionaNPC.isVisible() && */elionaNPC != null) {
-                getLogger().debug("eliona is in ram");
-
-                if (elionaNPC.isVisible()) {
+            eniolaNPC = Npcs.newQuery().names("Eniola").ids(7417).on(NPC.bankCoord).results().first();
+            if (eniolaNPC != null) {
+                getLogger().debug("Eniola is in ram");
+                if (!eniolaNPC.isVisible()) {
                     getLogger().warn("bank not visible");
-                    Camera.concurrentlyTurnTo(elionaNPC);
+                    Camera.concurrentlyTurnTo(eniolaNPC);
                 }
-                Bank.open();
-                elionaNPC.click();
+                Bank.open(((LocatableEntityQueryResults)((BankQueryBuilder) Banks.newQuery().visible()).results()).nearest());
                 Execution.delayUntil(Bank::isOpen, 1000, 2000);
-                getLogger().debug("Opening Eliona's Hole");
+                getLogger().debug("Opening Eniola's Hole");
             } else {
                 new traverseEniola();
             }

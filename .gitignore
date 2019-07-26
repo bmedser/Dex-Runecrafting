@@ -1,0 +1,8 @@
+
+*.xml
+*.class
+.idea/workspace.xml
+out/production/RunecraftingBot/com/xcookie/rc/branch/bank/DoesBankHaveRequiredItems.class
+out/production/RunecraftingBot/com/xcookie/rc/leaf/bank/OpenBank.class
+out/production/RunecraftingBot/com/xcookie/rc/leaf/bank/WithdrawItems.class
+out/production/RunecraftingBot/com/xcookie/rc/leaf/StopBot.class
