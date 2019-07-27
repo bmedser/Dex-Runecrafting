@@ -37,6 +37,21 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
 //    public TraversalLocation traversalLocation = TraversalLocation.flaxArea;
 
+    /** TODO
+     *
+     *  Enable protection from magic/range prayers when traversing to altar
+     *
+     *  If hp below getCurrentPercent <= 75, find food in bank (array spriteitem?) and withdraw, eat
+     *
+     *  If run below 50 and non stamina, withdraw stamina pot and drink
+     *
+     *  Pouch fill methods
+     *
+     *  Make sure game has gotten past news interface before starting bot
+     *
+     *  inventorylistener counter to relevant runes, count them in gp worth and display in gui?
+     *
+     */
     public Main(){
         guiWait = true;
         essCount = 0;

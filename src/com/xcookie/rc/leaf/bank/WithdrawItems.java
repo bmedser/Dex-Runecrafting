@@ -20,6 +20,18 @@ public class WithdrawItems extends LeafTask {
         setDefaultQuantity(ALL);
 //        setDefaultWithdrawQuantity(Bank.DefaultWithdrawQuantity.ALL);
 
-        Bank.withdraw("Pure essence", 2147483647);
+//        Bank.withdraw("Pure essence", 2147483647);
+
+        if (!Inventory.contains("Pure essence")) {
+            if ( Bank.isOpen()) {
+                Bank.withdraw("Pure essence", 28);
+            } else {
+                Bank.open();
+            }
+        }/* else {
+            if (Bank.isOpen()) {
+                Bank.close(); // we do this stuff outside of this class
+            }
+        }*/
     }
 }

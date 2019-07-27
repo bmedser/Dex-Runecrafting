@@ -9,7 +9,9 @@ public class Locations {
 //    public static List<Coordinate> = new Coordinate
 
     public static Area ZMIBank = new Area.Rectangular(new Coordinate(3012, 5626, 0), new Coordinate(3014, 5624, 0));
-    public static Coordinate ZMIWorldLadder = new Coordinate(2452 , 3231, 0); // + 1 so i can walk there
+    public static Coordinate ZMIWorldLadder = new Coordinate(2452 +1 , 3231, 0); // + 1 so i can walk there
+    public static Coordinate ladderCoord = new Coordinate(2452 +1 , 3231, 0); // + 1 so i can walk there
+
     public static Area ZMIRCAltar = new Area.Rectangular(new Coordinate(3056,5581,0), new Coordinate(3059,5575, 0));
     public static Area ZMIOutside = new Area.Rectangular(new Coordinate(2452, 3231, 0), new Coordinate(2456,3230, 0)); //contains the ladder and chaos altar, (6 x 3) box
     public static Area ZMITeleportArea = new Area.Rectangular(new Coordinate(2453, 3248, 0), new Coordinate(2474,3238, 0)); //contains the teleport area, large rectangle

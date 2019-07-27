@@ -1,4 +1,4 @@
-package com.xcookie.rc.branch.bank;
+package com.xcookie.rc.branch.traverse;
 
 import com.runemate.game.api.hybrid.location.Area;
 import com.runemate.game.api.hybrid.queries.NpcQueryBuilder;

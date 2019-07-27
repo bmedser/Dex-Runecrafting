@@ -6,6 +6,7 @@ import com.runemate.game.api.hybrid.location.Area;
 import com.runemate.game.api.hybrid.location.Coordinate;
 import com.runemate.game.api.hybrid.location.navigation.Path;
 import com.runemate.game.api.hybrid.location.navigation.Traversal;
+import com.runemate.game.api.hybrid.location.navigation.cognizant.RegionPath;
 import com.runemate.game.api.hybrid.location.navigation.web.WebPath;
 import com.runemate.game.api.hybrid.region.GameObjects;
 import com.runemate.game.api.hybrid.region.Players;
@@ -20,38 +21,26 @@ import com.xcookie.rc.leaf.action.CraftRunes;
  * Start walking to altar
  */
 public class traverseAltar extends LeafTask {
+
+    private RegionPath pathToAltar;
     private WebPath webPath;
-    private Path pathToAltar;
-    private Objects objects;
     private GameObject altar;
+
     @Override
     public void execute() {
-        altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059,5578,0)).results().first();
+        altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059, 5578, 0)).results().first();
         try {
+
             if (altar != null)
-//            pathToAltar = RegionPath.buildTo(Locations.ZMIRCAltar);
-//            pathToAltar = BresenhamPath.buildTo(Locations.ZMIWorldLadder);
                 webPath = Traversal.getDefaultWeb().getPathBuilder().buildTo(Locations.ZMIRCAltar);
             else
                 getLogger().warn("I couldn't find altar");
 
-            if (Locations.ZMIRCAltar.contains(Players.getLocal())) {
-                new CraftRunes();
+            while (!new Area.Circular(Locations.ZMIRCAltar.getCenter(), 5).contains(Players.getLocal())) {
+                webPath.step();
             }
-//        if (pathToAltar != null && pathToAltar.step()) { //maybe have nested if
-            if (webPath != null && !Locations.ZMIRCAltar.contains(Players.getLocal())) {
-                if (webPath.step()) { //maybe have nested if
-                    Execution.delayUntil(() -> !Players.getLocal().isMoving());
-                }
-            } else {
-                getLogger().severe("cant step to altar");
-            }
-        } catch ( NullPointerException e) {
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
-
-
-        //Move camera towards altar within range of x
-
     }
 }

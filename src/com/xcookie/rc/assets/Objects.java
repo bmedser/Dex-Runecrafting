@@ -19,7 +19,7 @@ public class Objects {
     public GameObject runecraftingAltar = GameObjects.newQuery().ids(29631).results().first();
 //    public GameObject ladderEntry = GameObjects.newQuery().ids(29635).on(locations.ZMIWorldLadder.getCoordinates()).results().first();
 //    public GameObject ladderEntry = GameObjects.newQuery().ids(29635).results().first();
-    public GameObject ladderEntry = GameObjects.newQuery().on(Locations.ZMIWorldLadder).results().nearest(); //temporary for glitch...
+    public GameObject ladderEntry = GameObjects.newQuery().on(Locations.ladderCoord).results().nearest(); //temporary for glitch...
 //    public GameObject ladderExit = GameObjects.newQuery().names("Ladder").on(locations.ZMIWorldLadder.getCoordinates()).results().first();
     public GameObject chaosAltar = GameObjects.newQuery().ids(411).on().results().first();
 //    public GameObject bankEniola = GameObjects.newQuery().ids(7417).results().first();

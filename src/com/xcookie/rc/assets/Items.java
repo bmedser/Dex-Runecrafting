@@ -13,11 +13,9 @@ public class Items {
 
 
 
-    public String altarRunes[] = {"Air rune", "Mind rune", "Water rune", "Earth rune", "Fire rune",
+    public static String altarRunes[] = {"Air rune", "Mind rune", "Water rune", "Earth rune", "Fire rune",
                                 "Body rune", "Cosmic rune", "Chaos rune", "Astral rune", "Nature rune",
                                 "Law rune", "Death rune", "Blood rune", "Soul rune", "Wrath rune"};
-
-
 
     //Essence
     public static SpriteItem essence = new SpriteItem(1436, 1);

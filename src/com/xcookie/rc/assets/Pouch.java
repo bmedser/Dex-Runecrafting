@@ -59,6 +59,16 @@ public enum Pouch implements InventoryListener {
         if(event.getItem() == items.pureEss) {
 
         }
+        //get pouched that was clicked, IF pouch removed its capacity it is full, otherwise return false, this way it keeps trying to fill up
+        if(event.getItem().toString().equals("Pure essence") && event.getQuantityChange() == getCapacity()) {
+
+        }
+
+        switch(event.getQuantityChange()) {
+            case 3:
+
+        }
+
     }
 
     public int getIndex() {

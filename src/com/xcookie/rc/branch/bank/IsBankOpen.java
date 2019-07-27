@@ -5,6 +5,7 @@ import com.runemate.game.api.script.framework.tree.BranchTask;
 import com.runemate.game.api.script.framework.tree.TreeTask;
 
 import com.xcookie.rc.branch.inventory.IsInventoryEmpty;
+import com.xcookie.rc.branch.traverse.IsEniolaNearby;
 
 /**
  * NOTES:

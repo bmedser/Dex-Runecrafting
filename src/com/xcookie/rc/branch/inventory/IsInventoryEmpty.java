@@ -4,6 +4,7 @@ import com.runemate.game.api.hybrid.local.hud.interfaces.Inventory;
 import com.runemate.game.api.script.framework.tree.BranchTask;
 import com.runemate.game.api.script.framework.tree.TreeTask;
 
+import com.xcookie.rc.assets.Items;
 import com.xcookie.rc.branch.bank.DoesBankHaveRequiredItems;
 import com.xcookie.rc.leaf.bank.DespositAll;
 
@@ -20,19 +21,19 @@ public class IsInventoryEmpty extends BranchTask {
     @Override
     public boolean validate() {
         getLogger().debug("is inventory empty");
-//        return Inventory.isEmpty();
-        return !Inventory.containsAnyOf("rune");
 
+        return !Inventory.containsAnyOf(Items.altarRunes);
     }
 
     @Override
     public TreeTask failureTask() {
-        getLogger().debug("failed, desposit all");
+        getLogger().debug("inventory does contain runes");
         return despositall;
     }
 
     @Override
     public TreeTask successTask() {
+        getLogger().debug("Inventory doesnt contain any runes");
         return doesbankhaverequireditems;
     }
 }
