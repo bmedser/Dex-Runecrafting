@@ -8,3 +8,4 @@ out/production/RunecraftingBot/com/xcookie/rc/leaf/bank/WithdrawItems.class
 out/production/RunecraftingBot/com/xcookie/rc/leaf/StopBot.class
 *.class
 *.log
+*.class

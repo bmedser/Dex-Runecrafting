@@ -51,6 +51,8 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
      *
      *  inventorylistener counter to relevant runes, count them in gp worth and display in gui?
      *
+     *  Add status strings to each methods for gui
+     *
      */
     public Main(){
         guiWait = true;
@@ -61,7 +63,7 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     @Override
     public TreeTask createRootTask() {
-        Execution.delay(5000);
+        Execution.delay(2000); //todo: length between each tree loop
         return root;
     }
 

@@ -2,7 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -20,50 +22,39 @@
     <children>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="604.0">
             <children>
-                <GridPane layoutX="-2.0" layoutY="-1.0" prefHeight="255.0" prefWidth="604.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="3.0" prefWidth="3.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="549.0" minWidth="10.0" prefWidth="549.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="1.0" prefWidth="1.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints maxHeight="119.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="119.0" minHeight="0.0" prefHeight="63.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="295.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                    <children>
-                        <GridPane prefHeight="228.0" prefWidth="549.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="76.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="143.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="138.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="148.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="70.0" />
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                            </rowConstraints>
-                            <children>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location: " GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM" />
-                                <ComboBox fx:id="Location_ComboBox" prefWidth="150.0" promptText="Select" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                    <GridPane.margin>
-                                        <Insets top="5.0" />
-                                    </GridPane.margin>
-                                </ComboBox>
-                            </children>
-                        </GridPane>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select an altar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                            <font>
-                                <Font size="22.0" />
-                            </font>
-                        </Text>
-                        <Button fx:id="Start_BT" disable="true" mnemonicParsing="false" prefHeight="34.0" prefWidth="89.0" text="Start" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                    </children>
-                </GridPane>
+                  <GridPane layoutX="27.0" layoutY="81.0" prefHeight="228.0" prefWidth="549.0">
+                      <columnConstraints>
+                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="76.0" />
+                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="143.0" />
+                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="138.0" />
+                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="148.0" />
+                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="70.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                          <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                          <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                          <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                      <children>
+                  <TextField fx:id="masterNameTextBox" onAction="#masterNameTextBoxEvent" onMouseExited="#masterNameTextBoxEvent" promptText="Trade to RSN" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location: " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+                          <ComboBox fx:id="Location_ComboBox" prefWidth="150.0" promptText="Select" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                              <GridPane.margin>
+                                  <Insets top="5.0" />
+                              </GridPane.margin>
+                          </ComboBox>
+                  <CheckBox fx:id="IsRunningCheckBox" accessibleText="Is player running essence to a player?" mnemonicParsing="false" onAction="#IsRunningCheckBoxEvent" prefHeight="17.0" prefWidth="120.0" snapToPixel="false" text="Running essence?" textAlignment="CENTER" GridPane.columnIndex="3" />
+                      </children>
+                  </GridPane>
+                  <Text layoutX="233.0" layoutY="60.740234375" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an altar">
+                      <font>
+                          <Font size="22.0" />
+                      </font>
+                  </Text>
+                  <Button fx:id="Start_BT" disable="true" layoutX="257.0" layoutY="197.0" mnemonicParsing="false" onAction="#StartButtonEvent" prefHeight="34.0" prefWidth="89.0" text="Start" textOverrun="CLIP" />
             </children>
         </AnchorPane>
     </children>

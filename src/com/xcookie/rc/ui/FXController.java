@@ -8,7 +8,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,6 +19,12 @@ import java.util.ResourceBundle;
 public class FXController implements Initializable {
 
     private Main bot;
+    public String masterRSN;
+    public boolean isRunning = false;
+
+    public FXController(Main bot) {
+        this.bot = bot;
+    }
 
     @FXML
     private ComboBox Location_ComboBox;
@@ -24,9 +32,27 @@ public class FXController implements Initializable {
     @FXML
     private Button Start_BT;
 
+    @FXML
+    private TextField masterNameTextBox;
 
-    public FXController(Main bot) {
-        this.bot = bot;
+    @FXML
+    private CheckBox IsRunningCheckBox;
+
+    @FXML
+    void IsRunningCheckBoxEvent(ActionEvent event) {
+        System.out.println("Checkbox event");
+        isRunning = IsRunningCheckBox.isSelected();
+    }
+
+    @FXML
+    void masterNameTextBoxEvent(ActionEvent event) {
+        System.out.println("Textbox event");
+        masterRSN = masterNameTextBox.getText();
+    }
+
+    @FXML
+    void StartButtonEvent(ActionEvent event) {
+
     }
 
     @Override

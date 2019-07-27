@@ -15,6 +15,7 @@ import com.runemate.game.api.rs3.local.hud.Powers;
 import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
 import com.xcookie.rc.assets.Locations;
+import com.xcookie.rc.leaf.StopBot;
 
 /**
  * NOTES:
@@ -27,37 +28,39 @@ public class traverseEniola extends LeafTask {
     @Override
     public void execute() {
 
-        if(Skill.MAGIC.getCurrentLevel() >= 71) // TODO: add toggle for 'has runes for teleporting to ourania'
-        {
-            getLogger().debug("trying to check for magic stuffs");
+        if(Skill.MAGIC.getCurrentLevel() >= 71 && Locations.ZMIRoom.contains(Players.getLocal())) {// TODO: add toggle for 'has runes for teleporting to ourania'
+            //If magic window isnt open, open it!
             if(!InterfaceWindows.getMagic().isOpen()) {
                 InterfaceWindows.getMagic().open();
             } else {
-                Magic.Lunar.OURANIA_TELEPORT.activate();
-                getLogger().debug("Using magic " + Magic.Lunar.OURANIA_TELEPORT.toString());
+                //If magic window is open, teleport out of zmi!!
+                if(!Locations.ZMITeleportArea.contains(Players.getLocal()))
+                    Magic.Lunar.OURANIA_TELEPORT.activate();
+                Execution.delay(500,1000);
+//                Execution.delayUntil(() -> Locations.ZMITeleportArea.contains(Players.getLocal()));
+                getLogger().info("Using spell: " + Magic.Lunar.OURANIA_TELEPORT.toString());
             }
+
+        } else if(Locations.ZMIRoom.contains(Players.getLocal())){
+            //Manually walk back to bank, used by skillers and low leveled players...
+            try {
+                pathToEniola = RegionPath.buildTo(Locations.ZMIBank);
+
+                if (pathToEniola.step()) {
+                    //so it doesnt run around the entire zmi ladder and look obv like a bot...
+                    Execution.delayUntil(() -> !Players.getLocal().isMoving());
+                }
+
+                while (new Area.Circular(Locations.ZMIBank.getCenter(), 5).contains(Players.getLocal())) {
+                    //Protect from range //TODO:
+                    Prayer.PROTECT_FROM_MISSILES.activate();
+                    pathToEniola.step();
+                }
+            }catch(NullPointerException e) {e.printStackTrace();}
 
         } else {
-            pathToEniola = RegionPath.buildTo(Locations.ZMIBank);
-            pathToEniola.step();
-
-            while (new Area.Circular(Locations.ZMIBank.getCenter(), 5).contains(Players.getLocal())) {
-                //Protect from range //TODO:
-        //        Prayer.PROTECT_FROM_MISSILES.activate();
-                pathToEniola.step();
-            }
-
-/*        if (pathToEniola.step()) {
-            Execution.delayUntil(() -> new Area.Circular(Locations.ZMIBank.getCenter(), 5).contains(Players.getLocal()));
-        }*/
-
-
-
-
-            //run to eniola
-/*        if (pathToEniola.step()) {
-            Execution.delayUntil(() -> !Players.getLocal().);
-        }*/
+            getLogger().severe("Where the fuck is the player?\n Stopping bot!!!"); //todo
+            new StopBot();
         }
     }
 }

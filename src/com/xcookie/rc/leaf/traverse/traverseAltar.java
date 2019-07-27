@@ -36,7 +36,7 @@ public class traverseAltar extends LeafTask {
             else
                 getLogger().warn("I couldn't find altar");
 
-            while (!new Area.Circular(Locations.ZMIRCAltar.getCenter(), 5).contains(Players.getLocal())) {
+            while (!new Area.Circular(Locations.ZMIRCAltar.getCenter(), 2).contains(Players.getLocal())) {
                 webPath.step();
             }
         } catch (NullPointerException e) {

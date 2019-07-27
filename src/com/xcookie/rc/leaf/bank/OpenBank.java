@@ -32,7 +32,7 @@ public class OpenBank extends LeafTask {
                     Camera.concurrentlyTurnTo(eniolaNPC);
                 }
                 Bank.open(((LocatableEntityQueryResults)((BankQueryBuilder) Banks.newQuery().visible()).results()).nearest());
-                Execution.delayUntil(Bank::isOpen, 1000, 2000);
+                Execution.delayUntil(Bank::isOpen, 250, 500);
                 getLogger().debug("Opening Eniola's Hole");
             } else {
                 new traverseEniola();

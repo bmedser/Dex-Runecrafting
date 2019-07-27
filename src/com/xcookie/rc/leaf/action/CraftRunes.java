@@ -21,12 +21,14 @@ public class CraftRunes extends LeafTask {
     public void execute() {
         altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059,5578,0)).results().first();
         if(!altar.isVisible()) {
-            if (Locations.ZMIRCAltar.contains(Players.getLocal())) {
+/*            if (Locations.ZMIRCAltar.contains(Players.getLocal())) {
+                new CraftRunes();
+            }*/
+            if(altar.distanceTo(Players.getLocal().getPosition()) < 7) {
                 new CraftRunes();
             }
             Camera.concurrentlyTurnTo(altar);
         }
         altar.interact("Craft-rune");
-//        altar.click();
     }
 }
