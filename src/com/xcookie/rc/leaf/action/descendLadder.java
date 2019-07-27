@@ -30,17 +30,22 @@ public class descendLadder extends LeafTask {
     public void execute() {
         chaosAltar = GameObjects.newQuery().on(new Coordinate(2454,3231,0)).results().first();
         ladder = GameObjects.newQuery().on(new Coordinate(2452,3231,0)).actions("Climb").results().nearest();
+
         //regain prayer points!
-        if(Prayer.getPoints() < Prayer.getMaximumPoints() - 10) { //commented for now cause api fucked?
-            chaosAltar.click();
-//            Execution.delayUntil(() -> Prayer.getPoints() == Prayer.getMaximumPoints());
+        if(Prayer.getPoints() < Prayer.getMaximumPoints() - 10) {
+//            chaosAltar.click();
+            chaosAltar.interact("Pray-at");
+            Execution.delayUntil(() -> (Prayer.getPoints() >= Prayer.getMaximumPoints() - 5) ); //so if it lags or something it will still stop the delay
         }
 
         Execution.delayUntil(() -> !Players.getLocal().isMoving());
-        if(ladder != null)
+        if(ladder != null) {
+            getLogger().info("Trying to descend ladder");
             ladder.click();
+//            Execution.delayUntil( () -> Players.getLocal().getPosition().equals(new Coordinate(3015,5629,0)));
+            Execution.delayUntil( () -> Players.getLocal().getAnimationId() != 827); //descend ladder animation
+        }
 //        objects.ladderEntry.interact(action); //GameObject
-        getLogger().info("Trying to descend ladder");
 
     }
 }

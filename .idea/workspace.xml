@@ -2,23 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7d087a0-019f-4ac9-ac78-d4dd618e84b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/xcookie/rc/assets/RunePouch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/assets/Locations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/assets/Locations.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/action/CraftRunes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/action/CraftRunes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/action/descendLadder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/action/descendLadder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/bank/OpenBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/bank/OpenBank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/bank/WithdrawItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/bank/WithdrawItems.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/traverse/traverseAltar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/traverse/traverseAltar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/traverse/traverseEniola.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/traverse/traverseEniola.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/traverse/traverseLadder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/leaf/traverse/traverseLadder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/ui/AltarUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/ui/AltarUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/ui/FXController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RunecraftingBot/com/xcookie/rc/ui/FXController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/assets/Locations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/assets/Locations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/CraftRunes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/CraftRunes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/OpenBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/OpenBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/branch/traverse/IsEniolaNearby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/branch/traverse/IsEniolaNearby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/descendLadder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/descendLadder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/WithdrawItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/WithdrawItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseAltar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseAltar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseEniola.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseEniola.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseLadder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseLadder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/ui/AltarUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/ui/AltarUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xcookie/rc/ui/FXController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xcookie/rc/ui/FXController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,44 +45,82 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/ui/AltarUI.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/ui/FXController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseEniola.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="298">
+              <caret line="38" column="55" lean-forward="true" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#598#599#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/ui/RCGui.java">
+        <entry file="jar://$PROJECT_DIR$/../RuneMate/RuneMate.jar!/com/runemate/game/api/osrs/local/RunePouch.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="167">
+              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseEniola.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/assets/RunePouch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+            <state relative-caret-position="192">
+              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2989#2990#0" expanded="true" />
+                <element signature="e#3048#3049#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseAltar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/descendLadder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/WithdrawItems.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/branch/traverse/IsEniolaNearby.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-72">
+              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,27 +153,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../RuneMate/RuneMate.jar!/com/runemate/game/api/osrs/local/hud/interfaces/Magic.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="139" column="79" selection-start-line="139" selection-start-column="66" selection-end-line="139" selection-end-column="79" />
-              <folding>
-                <element signature="e#0#22758#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/assets/Locations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -147,10 +165,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Flax</find>
-      <find>ExampleFlaxPicker</find>
-      <find>Runtime_L</find>
-      <find>image</find>
       <find>failed, desposit all</find>
       <find>is inventory empty</find>
       <find>bank is open with no required items</find>
@@ -177,6 +191,10 @@
       <find>Execution.delay</find>
       <find>WebPath</find>
       <find>OURANIA</find>
+      <find>prayer.</find>
+      <find>chaosAltar</find>
+      <find>withdraw</find>
+      <find>chaosaltar</find>
     </findStrings>
     <replaceStrings>
       <replace>new Coordinate</replace>
@@ -189,8 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/xcookie/rc/Root.java" />
-        <option value="$PROJECT_DIR$/src/com/xcookie/rc/branch/IsPouchesFull.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/assets/Bank.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/CloseBank.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/inventory/EmptyPouch.java" />
@@ -225,13 +241,10 @@
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/branch/bank/IsEniolaNearby.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/StopBot.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/branch/bank/DoesBankHaveRequiredItems.java" />
-        <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/WithdrawItems.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/assets/Items.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/branch/inventory/IsInventoryEmpty.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/assets/Objects.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/assets/Pouch.java" />
-        <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/descendLadder.java" />
-        <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseAltar.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/CraftRunes.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/assets/Locations.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/ui/AltarUI.fxml" />
@@ -239,13 +252,18 @@
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/OpenBank.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/Main.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseLadder.java" />
+        <option value="$PROJECT_DIR$/src/com/xcookie/rc/branch/traverse/IsEniolaNearby.java" />
+        <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseAltar.java" />
+        <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/WithdrawItems.java" />
+        <option value="$PROJECT_DIR$/src/com/xcookie/rc/assets/RunePouch.java" />
+        <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/descendLadder.java" />
         <option value="$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseEniola.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2566" />
-    <option name="y" value="-12" />
+    <option name="x" value="2579" />
+    <option name="y" value="-9" />
     <option name="width" value="1023" />
     <option name="height" value="679" />
   </component>
@@ -389,7 +407,7 @@
     <frame x="2552" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1661891" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1661891" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24934383" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -398,7 +416,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48738533" weight="0.32635984" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24546723" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24546723" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.43" weight="0.33333334" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -434,23 +452,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/Main.manifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/concurrent/FutureTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="265" selection-start-line="265" selection-end-line="265" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../RuneMate/RuneMate.jar!/nul/IIIIIIiiIiiiI.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../RuneMate/RuneMate.jar!/com/runemate/game/api/hybrid/entities/details/Interactable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -701,30 +702,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/WithdrawItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/branch/inventory/IsInventoryEmpty.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/branch/traverse/IsEniolaNearby.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -784,26 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="86" column="22" lean-forward="true" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseAltar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/descendLadder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -871,16 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/OpenBank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -898,6 +849,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/../RuneMate/RuneMate.jar!/com/runemate/game/api/hybrid/local/hud/interfaces/Health.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/OpenBank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseLadder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -909,10 +877,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/branch/traverse/IsEniolaNearby.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/bank/WithdrawItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/assets/RunePouch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2989#2990#0" expanded="true" />
+            <element signature="e#3048#3049#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseAltar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/action/descendLadder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../RuneMate/RuneMate.jar!/com/runemate/game/api/osrs/local/RunePouch.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xcookie/rc/leaf/traverse/traverseEniola.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+        <state relative-caret-position="298">
+          <caret line="38" column="55" lean-forward="true" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

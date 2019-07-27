@@ -28,7 +28,6 @@ public class IsEniolaNearby extends BranchTask {
     @Override
     public boolean validate() {
         getLogger().debug("is eniola nearby?");
-        if(Prayer.PROTECT_FROM_MISSILES.isActivated()) Prayer.PROTECT_FROM_MISSILES.deactivate();
 //        npc = Npcs.newQuery().filter(npc -> npc.getDefinition() != null && npc.getDefinition().getId() == 7417);
 //        if(npc.Eniola == null)
             return new Area.Circular(NPC.bankCoord, 15).contains(Players.getLocal());

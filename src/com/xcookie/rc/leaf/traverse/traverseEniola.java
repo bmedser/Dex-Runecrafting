@@ -1,5 +1,6 @@
 package com.xcookie.rc.leaf.traverse;
 
+import com.runemate.game.api.hybrid.local.Rune;
 import com.runemate.game.api.hybrid.local.Skill;
 import com.runemate.game.api.hybrid.local.Skills;
 import com.runemate.game.api.hybrid.local.hud.interfaces.InterfaceComponent;
@@ -25,10 +26,15 @@ public class traverseEniola extends LeafTask {
 
     private RegionPath pathToEniola;
 
+    public boolean canUseOuraniaTeleport() {
+        return RunePouch.getQuantity(Rune.LAW) >= 1 &&
+                RunePouch.getQuantity(Rune.ASTRAL) >= 2 &&
+                RunePouch.getQuantity(Rune.EARTH) >= 6;
+    }
     @Override
     public void execute() {
 
-        if(Skill.MAGIC.getCurrentLevel() >= 71 && Locations.ZMIRoom.contains(Players.getLocal())) {// TODO: add toggle for 'has runes for teleporting to ourania'
+        if(Skill.MAGIC.getCurrentLevel() >= 71 && Locations.ZMIRoom.contains(Players.getLocal()) && canUseOuraniaTeleport()) {// TODO: add toggle for 'has runes for teleporting to ourania'
             //If magic window isnt open, open it!
             if(!InterfaceWindows.getMagic().isOpen()) {
                 InterfaceWindows.getMagic().open();
@@ -52,8 +58,7 @@ public class traverseEniola extends LeafTask {
                 }
 
                 while (new Area.Circular(Locations.ZMIBank.getCenter(), 5).contains(Players.getLocal())) {
-                    //Protect from range //TODO:
-                    Prayer.PROTECT_FROM_MISSILES.activate();
+
                     pathToEniola.step();
                 }
             }catch(NullPointerException e) {e.printStackTrace();}

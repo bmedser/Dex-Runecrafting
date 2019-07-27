@@ -10,6 +10,7 @@ import com.runemate.game.api.hybrid.location.navigation.cognizant.RegionPath;
 import com.runemate.game.api.hybrid.location.navigation.web.WebPath;
 import com.runemate.game.api.hybrid.region.GameObjects;
 import com.runemate.game.api.hybrid.region.Players;
+import com.runemate.game.api.osrs.local.hud.interfaces.Prayer;
 import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
 import com.xcookie.rc.assets.Locations;
@@ -37,6 +38,11 @@ public class traverseAltar extends LeafTask {
                 getLogger().warn("I couldn't find altar");
 
             while (!new Area.Circular(Locations.ZMIRCAltar.getCenter(), 2).contains(Players.getLocal())) {
+                //Protect from range //TODO:
+                if(!Prayer.PROTECT_FROM_MISSILES.isActivated() && !Prayer.RAPID_HEAL.isActivated()) {
+                    Prayer.PROTECT_FROM_MISSILES.activate();
+                    Prayer.RAPID_HEAL.activate();
+                }
                 webPath.step();
             }
         } catch (NullPointerException e) {

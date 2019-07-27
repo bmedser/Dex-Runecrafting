@@ -1,6 +1,7 @@
 package com.xcookie.rc.leaf.bank;
 
 import com.runemate.game.api.hybrid.local.hud.interfaces.Bank;
+import com.runemate.game.api.hybrid.local.hud.interfaces.Health;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Inventory;
 import com.runemate.game.api.script.framework.tree.LeafTask;
 import com.xcookie.rc.assets.Items;
@@ -18,9 +19,12 @@ public class WithdrawItems extends LeafTask {
     public void execute() {
         getLogger().debug("Withdrawing items!");
         setDefaultQuantity(ALL);
-//        setDefaultWithdrawQuantity(Bank.DefaultWithdrawQuantity.ALL);
 
-//        Bank.withdraw("Pure essence", 2147483647);
+        if(Health.getCurrentPercent() <= 50) {
+            if (Bank.isOpen() && Bank.contains("Salmon")) {
+                Bank.withdraw("Salmon", 5);
+            }
+        }
 
         if (!Inventory.contains("Pure essence")) {
             if ( Bank.isOpen()) {
@@ -28,10 +32,6 @@ public class WithdrawItems extends LeafTask {
             } else {
                 Bank.open();
             }
-        }/* else {
-            if (Bank.isOpen()) {
-                Bank.close(); // we do this stuff outside of this class
-            }
-        }*/
+        }
     }
 }
