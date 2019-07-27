@@ -28,24 +28,26 @@ public class descendLadder extends LeafTask {
 
     @Override
     public void execute() {
+        getLogger().debug("descend ladder");
         chaosAltar = GameObjects.newQuery().on(new Coordinate(2454,3231,0)).results().first();
-        ladder = GameObjects.newQuery().on(new Coordinate(2452,3231,0)).actions("Climb").results().nearest();
+        ladder = GameObjects.newQuery().on(new Coordinate(2452,3231,0)).results().nearest();
 
         //regain prayer points!
-        if(Prayer.getPoints() < Prayer.getMaximumPoints() - 10) {
-//            chaosAltar.click();
-            chaosAltar.interact("Pray-at");
-            Execution.delayUntil(() -> (Prayer.getPoints() >= Prayer.getMaximumPoints() - 5) ); //so if it lags or something it will still stop the delay
+        if(Prayer.getPoints() < Prayer.getMaximumPoints() - 10 && chaosAltar.isVisible()) {
+            if(chaosAltar.interact("Pray-at")) {
+//                Execution.delayUntil(()-> Players.getLocal().getAnimationId()  !=  645);
+                  Execution.delayUntil(() -> (Prayer.getPoints() >= Prayer.getMaximumPoints() - 5) ); //so if it lags or something it will still stop the delay
+            }
+            getLogger().info("Prayed at altar points:" + Prayer.getPoints());
         }
 
-        Execution.delayUntil(() -> !Players.getLocal().isMoving());
-        if(ladder != null) {
+        if(ladder != null && ladder.isVisible()) {
             getLogger().info("Trying to descend ladder");
-            ladder.click();
+            ladder.interact("Climb"); //fix todo
 //            Execution.delayUntil( () -> Players.getLocal().getPosition().equals(new Coordinate(3015,5629,0)));
-            Execution.delayUntil( () -> Players.getLocal().getAnimationId() != 827); //descend ladder animation
+            if(Players.getLocal().getAnimationId() == 827) {
+                Execution.delayUntil( () -> Players.getLocal().getAnimationId() != 827); //descend ladder animation
+            }
         }
-//        objects.ladderEntry.interact(action); //GameObject
-
     }
 }

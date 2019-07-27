@@ -24,9 +24,9 @@ public class CraftRunes extends LeafTask {
 /*            if (Locations.ZMIRCAltar.contains(Players.getLocal())) {
                 new CraftRunes();
             }*/
-            if(altar.distanceTo(Players.getLocal().getPosition()) < 7) {
+/*            if(altar.distanceTo(Players.getLocal().getPosition()) < 7) {
                 new CraftRunes();
-            }
+            }*/
             Camera.concurrentlyTurnTo(altar);
         }
         altar.interact("Craft-rune");

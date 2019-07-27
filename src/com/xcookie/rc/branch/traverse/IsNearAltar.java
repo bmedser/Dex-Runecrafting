@@ -8,6 +8,7 @@ import com.runemate.game.api.hybrid.region.Players;
 import com.runemate.game.api.script.framework.tree.BranchTask;
 import com.runemate.game.api.script.framework.tree.TreeTask;
 
+import com.xcookie.rc.Main;
 import com.xcookie.rc.assets.Locations;
 import com.xcookie.rc.assets.Objects;
 import com.xcookie.rc.branch.inventory.HasEssence;
@@ -26,17 +27,18 @@ public class IsNearAltar extends BranchTask {
 
     @Override
     public boolean validate() {
-//        altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059,5578,0)).results().first();
+        altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059,5578,0)).results().first();
 
 //        if(altar != null && altar.getPosition() != null) {
-            return Locations.ZMIRCAltar.contains(Players.getLocal());
+//            return Locations.ZMIRCAltar.contains(Players.getLocal());
+        return altar.isVisible();
 //        }
 //        return false;
     }
 
     @Override
     public TreeTask failureTask() {
-        getLogger().warn("running to altar");
+        getLogger().info("running to altar");
         return traversealtar;
     }
 

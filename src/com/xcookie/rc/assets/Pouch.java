@@ -5,6 +5,8 @@ import com.runemate.game.api.hybrid.local.hud.interfaces.SpriteItem;
 import com.runemate.game.api.script.framework.listeners.InventoryListener;
 import com.runemate.game.api.script.framework.listeners.events.ItemEvent;
 
+import static com.runemate.game.api.hybrid.Environment.getLogger;
+
 public enum Pouch implements InventoryListener {
 
     GIANT_POUCH(0, "Giant pouch", false, 18, 5514),
@@ -56,7 +58,12 @@ public enum Pouch implements InventoryListener {
 
     @Override
     public void onItemRemoved(ItemEvent event) {
-        if(event.getItem() == items.pureEss) {
+
+        if(capacity == event.getQuantityChange()) {
+            getLogger().fine("Successfully filled " + getName());
+            isFull = true;
+        }
+       /* if(event.getItem() == items.pureEss) {
 
         }
         //get pouched that was clicked, IF pouch removed its capacity it is full, otherwise return false, this way it keeps trying to fill up
@@ -67,7 +74,7 @@ public enum Pouch implements InventoryListener {
         switch(event.getQuantityChange()) {
             case 3:
 
-        }
+        }*/
 
     }
 

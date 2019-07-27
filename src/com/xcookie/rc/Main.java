@@ -1,6 +1,9 @@
 package com.xcookie.rc;
 
 import com.runemate.game.api.client.embeddable.EmbeddableUI;
+import com.runemate.game.api.hybrid.cache.sprites.Sprite;
+import com.runemate.game.api.hybrid.local.Rune;
+import com.runemate.game.api.hybrid.local.hud.interfaces.SpriteItem;
 import com.runemate.game.api.hybrid.util.StopWatch;
 import com.runemate.game.api.hybrid.util.calculations.CommonMath;
 import com.runemate.game.api.script.Execution;
@@ -32,6 +35,15 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     private Root root = new Root();
     public Boolean guiWait;
+
+    public String getCurrentTaskString() {
+        return currentTaskString;
+    }
+
+    public void setCurrentTaskString(String currentTaskString) {
+        this.currentTaskString = currentTaskString;
+    }
+
     public String currentTaskString;
 
 
@@ -60,7 +72,6 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
         setEmbeddableUI(this);
     }
 
-
     @Override
     public TreeTask createRootTask() {
         Execution.delay(2000); //todo: length between each tree loop
@@ -69,6 +80,7 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     @Override
     public void onStart(String... args) {
+        getEventDispatcher().addListener(this);
         stopWatch.start();
         currentTaskString = "Started bot";
         setLoopDelay(300, 600);
@@ -76,10 +88,21 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
     }
 
     @Override
+    public void onItemRemoved(ItemEvent event) {
+        System.out.println("Item Removed: " + event.getItem() + " (" + event.getQuantityChange() + ")");
+    }
+
+    @Override
     public void onItemAdded(ItemEvent event) {
+
+        System.out.println("Item Added: " + event.getItem() + " (" + event.getQuantityChange() + ")");
 
         if(event.getItem() == Items.pureEss) {
             essCount++;
+        }
+
+        if (event.toString().equals(Rune.AIR.getName())) {
+            getLogger().severe("air rune in inventory@!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         }
     }
 
