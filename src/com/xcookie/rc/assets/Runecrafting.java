@@ -9,7 +9,7 @@ import java.util.HashSet;
 public enum Runecrafting {
 
         OURANIA_ALTAR(0, "Ourania altar", new Coordinate(3059, 5583, 0)),
-        NATURE_RUNES(1, "Nature runes", new Coordinate(2398, 4841, 0)),
+        NATURE_ALTAR(1, "Nature altar", new Coordinate(2398, 4841, 0)),
         LAW_ALTAR(2, "Law altar", new Coordinate(2464, 4834, 0)),
         COSMIC_ALTAR(3, "Cosmic altar", new Coordinate(2162, 4833, 0)),
         AIR_ALTAR(4, "Air altar", new Coordinate(2845, 4832, 0)),
