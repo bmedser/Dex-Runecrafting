@@ -1,7 +1,10 @@
 package com.xcookie.rc;
 
 import com.runemate.game.api.client.embeddable.EmbeddableUI;
+import com.runemate.game.api.hybrid.RuneScape;
+import com.runemate.game.api.hybrid.entities.definitions.ItemDefinition;
 import com.runemate.game.api.hybrid.local.Rune;
+import com.runemate.game.api.hybrid.local.hud.interfaces.SpriteItem;
 import com.runemate.game.api.hybrid.util.StopWatch;
 import com.runemate.game.api.hybrid.util.calculations.CommonMath;
 import com.runemate.game.api.script.Execution;
@@ -10,7 +13,6 @@ import com.runemate.game.api.script.framework.listeners.events.ItemEvent;
 import com.runemate.game.api.script.framework.tree.TreeBot;
 import com.runemate.game.api.script.framework.tree.TreeTask;
 import com.xcookie.rc.assets.Items;
-import com.xcookie.rc.altar.zmi.branch.Root;
 import com.xcookie.rc.ui.RCGui;
 import com.xcookie.rc.ui.Info;
 import com.xcookie.rc.ui.RCInfoUI;
@@ -49,8 +51,6 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     /** TODO
      *
-     *  Enable protection from magic/range prayers when traversing to altar
-     *
      *  If hp below getCurrentPercent <= 75, find food in bank (array spriteitem?) and withdraw, eat
      *
      *  If run below 50 and non stamina, withdraw stamina pot and drink
@@ -72,17 +72,20 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     @Override
     public TreeTask createRootTask() {
-        Execution.delay(2000); //todo: length between each tree loop
+//        Execution.delay(2000); //todo: length between each tree loop
         return root;
     }
 
     @Override
     public void onStart(String... args) {
+        while(!RuneScape.isLoggedIn()) {
+            Execution.delay(100);
+        }
         getEventDispatcher().addListener(this);
         stopWatch.start();
         currentTaskString = "Started bot";
-        setLoopDelay(300, 600);
-        getEventDispatcher().addListener(this);
+//        setLoopDelay(300, 600);
+//        getEventDispatcher().addListener(this);
     }
 
     @Override
@@ -92,11 +95,12 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     @Override
     public void onItemAdded(ItemEvent event) {
-
         System.out.println("Item Added: " + event.getItem() + " (" + event.getQuantityChange() + ")");
 
-        if(event.getItem() == Items.pureEss) {
-            essCount++;
+        ItemDefinition essence = ItemDefinition.get(Items.pureEss.getId());
+        if(event.getItem().toString().equals(Items.pureEss.toString())) {
+            System.out.println("Event Item Change: " + event.getItem().toString() + " ");
+            essCount = essCount + event.getQuantityChange();
         }
 
         if (event.toString().equals(Rune.AIR.getName())) {
