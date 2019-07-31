@@ -4,7 +4,7 @@ import com.runemate.game.api.hybrid.location.Coordinate;
 
 public enum Bank {
 
-    APE_ATOLL_SOUTH("Ape Atoll", Type.DEPOSIT, new Coordinate(3047, 3237, 0)),
+    APE_ATOLL_SOUTH("Ape Atoll", Type.DEPOSIT, new Coordinate(2779, 2785, 0)),
     ARDOUGNE_EAST("Ardougne East", Type.FULL, new Coordinate(2655, 3283, 0)),
     BARBARIAN_OUTPOST("Barbarian Outpost", Type.FULL, new Coordinate(2535, 3572, 0)),
     BURGH_DE_ROTT("Burgh de Rott", Type.FULL, new Coordinate(3494, 3211, 0)),
@@ -27,7 +27,7 @@ public enum Bank {
     SEERS_VILLAGE("Seer's Village", Type.FULL, new Coordinate(2725, 3492, 0)),
     SHILO_VILLAGE("Shilo Village", Type.FULL, new Coordinate(2853, 2955, 0)),
     VARROCK_EAST("Varrock East", Type.FULL, new Coordinate(3253, 3420, 0)),
-    VARROCK_WEST("Varrock West", Type.FULL, new Coordinate(3210, 3424, 0)), //fix
+    VARROCK_WEST("Varrock West", Type.FULL, new Coordinate(3182, 3436, 0)), //fix
     WOODCUTTING_GUILD("Woodcutting Guild", Type.FULL, new Coordinate(1592, 3476, 0)),
     KOUREND_ARCEUS("Kourend Arceus District", Type.FULL, new Coordinate(1635, 3740, 0));
 

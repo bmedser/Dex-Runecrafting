@@ -23,13 +23,13 @@ public class IsNearAltar extends BranchTask {
 
     @Override
     public boolean validate() {
+        boolean isVisible = false;
         altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059,5578,0)).results().first();
-
-//        if(altar != null && altar.getPosition() != null) {
-//            return Locations.ZMIRCAltar.contains(Players.getLocal());
-        return altar.isVisible();
-//        }
-//        return false;
+        if (altar != null) {
+            isVisible = altar.isVisible();
+            return isVisible;
+        }
+        return isVisible;
     }
 
     @Override

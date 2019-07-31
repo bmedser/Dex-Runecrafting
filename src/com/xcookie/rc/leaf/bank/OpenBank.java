@@ -9,6 +9,7 @@ import com.runemate.game.api.hybrid.region.Banks;
 import com.runemate.game.api.hybrid.region.Npcs;
 import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
+import com.xcookie.rc.Main;
 import com.xcookie.rc.assets.NPC;
 import com.xcookie.rc.leaf.traverse.traverseEniola;
 
@@ -22,6 +23,7 @@ public class OpenBank extends LeafTask {
     private Npc eniolaNPC;
     @Override
     public void execute() {
+        new Main().setCurrentTaskString("Opening bank");
 
         try {
             eniolaNPC = Npcs.newQuery().names("Eniola").ids(7417).on(NPC.bankCoord).results().first();
@@ -32,7 +34,7 @@ public class OpenBank extends LeafTask {
                     Camera.concurrentlyTurnTo(eniolaNPC);
                 }
                 Bank.open(((LocatableEntityQueryResults)((BankQueryBuilder) Banks.newQuery().visible()).results()).nearest());
-                Execution.delayUntil(Bank::isOpen, 250, 500);
+//                Execution.delayUntil(Bank::isOpen, 250, 500);
                 getLogger().debug("Opening Eniola's Hole");
             } else {
                 new traverseEniola();

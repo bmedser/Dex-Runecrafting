@@ -6,6 +6,7 @@ import com.runemate.game.api.hybrid.local.hud.interfaces.Inventory;
 import com.runemate.game.api.hybrid.location.navigation.Traversal;
 import com.runemate.game.api.hybrid.region.Players;
 import com.runemate.game.api.script.framework.tree.LeafTask;
+import com.xcookie.rc.Main;
 
 import static com.runemate.game.api.hybrid.local.hud.interfaces.Bank.*;
 import static com.runemate.game.api.hybrid.local.hud.interfaces.Bank.DefaultQuantity.ALL;
@@ -18,7 +19,9 @@ public class WithdrawItems extends LeafTask {
 
     @Override
     public void execute() {
+        new Main().setCurrentTaskString("Withdrawing items");
         getLogger().debug("Withdrawing items!");
+
         setDefaultQuantity(ALL);
 
         if (Health.getCurrentPercent() <= 50) {
@@ -50,14 +53,17 @@ public class WithdrawItems extends LeafTask {
                         getLogger().fine("Withdrawing stamina pot");
                         Bank.withdraw("Stamina potion(1)", 1);
                     } else if (Bank.containsAnyOf(3008)) {
-                        getLogger().fine("Withdrawing energy pot");
-                        Bank.withdraw("Energy potion(4)", 1);
+                        if(!Inventory.containsAnyOf("Energy potion")) {
+                            getLogger().fine("Withdrawing energy pot");
+                            Bank.withdraw("Energy potion(4)", 1);
+                        }
                     } else if (Bank.containsAnyOf(3016)) {
-                        getLogger().fine("Withdrawing super energy pot");
-                        Bank.withdraw("Super energy(4)", 1);
+                        if(!Inventory.containsAnyOf("Super energy")) {
+                            getLogger().fine("Withdrawing super energy pot");
+                            Bank.withdraw("Super energy(4)", 1);
+                        }
                     }
                 }
-
                 Bank.withdraw("Pure essence", 28);
             } else {
                 Bank.open();

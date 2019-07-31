@@ -13,6 +13,7 @@ import com.runemate.game.api.script.framework.listeners.events.ItemEvent;
 import com.runemate.game.api.script.framework.tree.TreeBot;
 import com.runemate.game.api.script.framework.tree.TreeTask;
 import com.xcookie.rc.assets.Items;
+import com.xcookie.rc.assets.Runecrafting;
 import com.xcookie.rc.assets.Runes;
 import com.xcookie.rc.ui.RCGui;
 import com.xcookie.rc.ui.Info;
@@ -92,54 +93,88 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     @Override
     public void onItemRemoved(ItemEvent event) {
-        System.out.println("Item Removed: " + event.getItem() + " (" + event.getQuantityChange() + ")");
+//        System.out.println("Item Removed: " + event.getItem() + " (" + event.getQuantityChange() + ")");
     }
 
     @Override
     public void onItemAdded(ItemEvent event) {
-        System.out.println("Item Added: " + event.getItem() + " (" + event.getQuantityChange() + ")");
+//        System.out.println("Item Added: " + event.getItem() + " (" + event.getQuantityChange() + ")");
 
-        ItemDefinition essence = ItemDefinition.get(Items.pureEss.getId());
 
-/*        switch (event.getItem().getId()) {
-            case (essence.getId()):
-                getLogger().warn("Essence used: " + essCount);
-                essCount = essCount + event.getQuantityChange();
+        switch(event.getItem().getId()) {
+            case 7936:
+                essCount += event.getQuantityChange();
                 break;
-
-*//*            case(Rune.AIR) :
-                Runes
-
-                case*//*
+            case 554:
+                fireCount += event.getQuantityChange();
+                break;
+            case 555:
+                waterCount += event.getQuantityChange();
+                break;
+            case 556:
+                airCount += event.getQuantityChange();
+                break;
+            case 557:
+                earthCount += event.getQuantityChange();
+                break;
+            case 558:
+                mindCount += event.getQuantityChange();
+                break;
+            case 559:
+                bodyCount += event.getQuantityChange();
+                break;
+            case 560:
+                deathCount += event.getQuantityChange();
+                break;
+            case 561:
+                getLogger().debug("Nature runes: " + natureCount);
+                natureCount += event.getQuantityChange();
+                break;
+            case 562:
+                chaosCount += event.getQuantityChange();
+                break;
+            case 563:
+                lawCount += event.getQuantityChange();
+                break;
+            case 564:
+                cosmicCount += event.getQuantityChange();
+                break;
+            case 565:
+                bloodCount += event.getQuantityChange();
+                break;
+            case 566:
+                soulCount += event.getQuantityChange();
+                break;
 
             default:
+                getLogger().debug("Got item: " + event.getItem().toString());
                 break;
-        }*/
+        }
 
-        if(essence.getId() == event.getItem().getId()) {
+
+/*        if(essence.getId() == event.getItem().getId()) {
             getLogger().warn("Essence used: " + essCount);
             essCount = essCount + event.getQuantityChange();
         }
 
-        if(Rune.AIR.IIIiIiiiIiiII == event.getItem().getId()) {
+        if(air.getId() == event.getItem().getId()) {
             airCount = airCount + event.getQuantityChange();
         }
-        if(Rune.BODY.IIIiIiiiIiiII == event.getItem().getId()) {
+        if(body.getId() == event.getItem().getId()) {
             bodyCount = bodyCount + event.getQuantityChange();
         }
-        if(Rune.EARTH.IIIiIiiiIiiII == event.getItem().getId()) {
+        if(earth.getId() == event.getItem().getId()) {
             earthCount = earthCount + event.getQuantityChange();
         }
-        if(Rune.FIRE.IIIiIiiiIiiII == event.getItem().getId()) {
+        if(fire.getId() == event.getItem().getId()) {
             getLogger().warn("Fire : " + fireCount);
             fireCount = fireCount + event.getQuantityChange();
         }
+        if(water.getId() == event.getItem().getId()) {
+            getLogger().warn("Fire : " + fireCount);
+            fireCount = fireCount + event.getQuantityChange();
+        }*/
 
-
-        if(event.getItem().toString().equals(Items.pureEss.toString())) {
-            System.out.println("Event Item Change: " + event.getItem().toString() + " ");
-            essCount = essCount + event.getQuantityChange();
-        }
     }
 
     @Override
@@ -160,13 +195,15 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
     public void updateInfo() {
         try {
             // Assign all values to a new instance of the Info class
+/*
             info = new Info(
                     (int) CommonMath.rate(TimeUnit.HOURS, stopWatch.getRuntime(), essCount),  //   -   -   -   -   -   -   -   // Flax per hour
                     essCount,                //    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   // Essence Picked
                     stopWatch.getRuntimeAsString(),                 //  -   -   -   -   -   -   -   -   -   -   -   -   -   -   // Total Runtime
                     currentTaskString);       //    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   // Current Task
+*/
 
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
 

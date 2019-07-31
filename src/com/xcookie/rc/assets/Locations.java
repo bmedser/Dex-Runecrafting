@@ -22,7 +22,7 @@ public class Locations {
     public static Area ZMIRoom = new Area.Rectangular(new Coordinate(3009, 5630, 0), new Coordinate(3063,5575, 0)); //for getting runes when u run out at zmi bank
 
     public static Area ZMIOutside = new Area.Polygonal(
-            new Coordinate(2453, 3238, 0),
+/*            new Coordinate(2453, 3238, 0),
             new Coordinate(2456, 3238, 0),
             new Coordinate(2456, 3230, 0),
             new Coordinate(2455, 3229, 0),
@@ -30,7 +30,12 @@ public class Locations {
             new Coordinate(2452, 3231, 0),
             new Coordinate(2452, 3232, 0),
             new Coordinate(2453, 3233, 0),
-            new Coordinate(2453, 3237, 0)
+            new Coordinate(2453, 3237, 0)*/
+            new Coordinate(2453, 3234, 0),
+            new Coordinate(2456, 3234, 0),
+            new Coordinate(2456, 3232, 0),
+            new Coordinate(2452, 3232, 0),
+            new Coordinate(2453, 3233, 0)
     );
 
 /*    Area[] area = { //zmioutside larger

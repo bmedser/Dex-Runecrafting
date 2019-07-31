@@ -41,7 +41,6 @@ public enum Pouch implements InventoryListener {
         tempPouch.interact(fill);
     }
 
-
     @Override
     public String toString() {
         return "Pouch{" +
@@ -56,6 +55,11 @@ public enum Pouch implements InventoryListener {
 
     }
 
+    public void setPouchFilled(Pouch pouch) {
+
+    }
+
+
     @Override
     public void onItemRemoved(ItemEvent event) {
 
@@ -63,7 +67,7 @@ public enum Pouch implements InventoryListener {
             getLogger().fine("Successfully filled " + getName());
             isFull = true;
         }
-       /* if(event.getItem() == items.pureEss) {
+        if(event.getItem() == items.pureEss) {
 
         }
         //get pouched that was clicked, IF pouch removed its capacity it is full, otherwise return false, this way it keeps trying to fill up
@@ -72,10 +76,21 @@ public enum Pouch implements InventoryListener {
         }
 
         switch(event.getQuantityChange()) {
-            case 3:
-
-        }*/
-
+            case 3: // small
+                setPouchFilled(SMALL_POUCH);
+                break;
+            case 6: //medium
+                setPouchFilled(MEDIUM_POUCH);
+                break;
+            case 12: //large
+                setPouchFilled(LARGE_POUCH);
+                break;
+            case 18: //giant
+                setPouchFilled(GIANT_POUCH);
+                break;
+            default:
+                break;
+        }
     }
 
     public int getIndex() {

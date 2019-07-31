@@ -11,6 +11,7 @@ import com.runemate.game.api.osrs.local.RunePouch;
 import com.runemate.game.api.osrs.local.hud.interfaces.Magic;
 import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
+import com.xcookie.rc.Main;
 import com.xcookie.rc.assets.Locations;
 import com.xcookie.rc.leaf.StopBot;
 
@@ -31,6 +32,7 @@ public class traverseEniola extends LeafTask {
 
     @Override
     public void execute() {
+        new Main().setCurrentTaskString("Traversing to Eniola");
 
         if (canUseOuraniaTeleport() && Locations.ZMIRoom.contains(Players.getLocal())) {
 
@@ -39,12 +41,17 @@ public class traverseEniola extends LeafTask {
                 InterfaceWindows.getMagic().open();
             } else {
                 //If magic window is open, teleport out of zmi!!
-                if (!Locations.ZMITeleportArea.contains(Players.getLocal()))
+                if (!Locations.ZMITeleportArea.contains(Players.getLocal())) {
                     Magic.Lunar.OURANIA_TELEPORT.activate();
+                }
 
                 if(Players.getLocal().getAnimationId() == 1816) { //wait until finish teleporting
                     Execution.delayUntil(() -> Players.getLocal().getAnimationId() != 1816);
                     getLogger().warn("!!!Teleporting delay!!!");
+
+                    if (!InterfaceWindows.getInventory().isOpen()) {
+                        InterfaceWindows.getInventory().open();
+                    }
                 }
 
 //                Execution.delayUntil(() -> Locations.ZMITeleportArea.contains(Players.getLocal()));

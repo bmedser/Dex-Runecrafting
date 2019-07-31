@@ -8,6 +8,7 @@ import com.runemate.game.api.hybrid.region.Players;
 import com.runemate.game.api.osrs.local.hud.interfaces.Prayer;
 import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
+import com.xcookie.rc.Main;
 import com.xcookie.rc.assets.Locations;
 import com.xcookie.rc.assets.Objects;
 
@@ -29,6 +30,9 @@ public class descendLadder extends LeafTask {
 
     @Override
     public void execute() {
+        new Main().setCurrentTaskString("Descending ladder");
+
+
         getLogger().debug("descend ladder");
         chaosAltar = GameObjects.newQuery().on(new Coordinate(2454, 3231, 0)).results().first();
         ladder = GameObjects.newQuery().on(new Coordinate(2452, 3231, 0)).actions("Climb").results().first();
@@ -51,6 +55,7 @@ public class descendLadder extends LeafTask {
             if (!ladder.isVisible()) {
                 getLogger().debug("turning camera to ladder");
                 Camera.concurrentlyTurnTo(ladder);
+                Camera.setZoom(0.1, 0.2);
             }
             getLogger().info("Trying to descend ladder");
             ladder.interact("Climb"); //fix todo

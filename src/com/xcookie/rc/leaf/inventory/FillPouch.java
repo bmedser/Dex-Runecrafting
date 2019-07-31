@@ -2,6 +2,7 @@ package com.xcookie.rc.leaf.inventory;
 
 import com.runemate.game.api.hybrid.local.hud.interfaces.SpriteItem;
 import com.runemate.game.api.script.framework.tree.LeafTask;
+import com.xcookie.rc.Main;
 
 /**
  * NOTES:
@@ -17,6 +18,8 @@ public class FillPouch extends LeafTask {
 
     @Override
     public void execute() {
+        new Main().setCurrentTaskString("Filling pouch");
+
         pouch.interact("Fill");
 /*        SpriteItem[] pouchCount = Inventory.getItems().toArray();
         for(SpriteItem s : pouchCount ) {

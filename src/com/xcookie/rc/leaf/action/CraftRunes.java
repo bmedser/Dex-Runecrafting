@@ -5,6 +5,7 @@ import com.runemate.game.api.hybrid.local.Camera;
 import com.runemate.game.api.hybrid.location.Coordinate;
 import com.runemate.game.api.hybrid.region.GameObjects;
 import com.runemate.game.api.script.framework.tree.LeafTask;
+import com.xcookie.rc.Main;
 
 /**
  * NOTES:
@@ -17,6 +18,9 @@ public class CraftRunes extends LeafTask {
 
     @Override
     public void execute() {
+        new Main().setCurrentTaskString("Crafting runes");
+
+
         altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059,5578,0)).results().first();
         if(!altar.isVisible()) {
             descendladder.hasPrayed = false;

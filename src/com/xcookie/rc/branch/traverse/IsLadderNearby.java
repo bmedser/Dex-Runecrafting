@@ -15,7 +15,6 @@ import com.xcookie.rc.leaf.traverse.traverseLadder;
  */
 public class IsLadderNearby extends BranchTask {
 
-    private descendLadder descendladder = new descendLadder();
     private traverseLadder traverseladder = new traverseLadder();
     private IsTalkingToMage isTalkingToWizard = new IsTalkingToMage();
 
