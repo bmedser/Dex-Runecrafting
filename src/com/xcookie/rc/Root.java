@@ -21,7 +21,7 @@ public class Root extends BranchTask {
     @Override
     public boolean validate() {
          // so it can get past login and shit
-        getLogger().debug("Root");
+//        getLogger().debug("Root");
         return true;
     }
 

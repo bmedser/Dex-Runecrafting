@@ -13,6 +13,7 @@ import com.runemate.game.api.script.framework.listeners.events.ItemEvent;
 import com.runemate.game.api.script.framework.tree.TreeBot;
 import com.runemate.game.api.script.framework.tree.TreeTask;
 import com.xcookie.rc.assets.Items;
+import com.xcookie.rc.assets.Runes;
 import com.xcookie.rc.ui.RCGui;
 import com.xcookie.rc.ui.Info;
 import com.xcookie.rc.ui.RCInfoUI;
@@ -22,6 +23,8 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.Node;
 
 import java.util.concurrent.TimeUnit;
+
+import static com.xcookie.rc.assets.Runes.*;
 
 public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
@@ -78,14 +81,13 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     @Override
     public void onStart(String... args) {
-        while(!RuneScape.isLoggedIn()) {
+/*        while(!RuneScape.isLoggedIn()) { //TODO will never run
             Execution.delay(100);
-        }
+        }*/
         getEventDispatcher().addListener(this);
         stopWatch.start();
         currentTaskString = "Started bot";
 //        setLoopDelay(300, 600);
-//        getEventDispatcher().addListener(this);
     }
 
     @Override
@@ -98,13 +100,45 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
         System.out.println("Item Added: " + event.getItem() + " (" + event.getQuantityChange() + ")");
 
         ItemDefinition essence = ItemDefinition.get(Items.pureEss.getId());
-        if(event.getItem().toString().equals(Items.pureEss.toString())) {
-            System.out.println("Event Item Change: " + event.getItem().toString() + " ");
+
+/*        switch (event.getItem().getId()) {
+            case (essence.getId()):
+                getLogger().warn("Essence used: " + essCount);
+                essCount = essCount + event.getQuantityChange();
+                break;
+
+*//*            case(Rune.AIR) :
+                Runes
+
+                case*//*
+
+            default:
+                break;
+        }*/
+
+        if(essence.getId() == event.getItem().getId()) {
+            getLogger().warn("Essence used: " + essCount);
             essCount = essCount + event.getQuantityChange();
         }
 
-        if (event.toString().equals(Rune.AIR.getName())) {
-            getLogger().severe("air rune in inventory@!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        if(Rune.AIR.IIIiIiiiIiiII == event.getItem().getId()) {
+            airCount = airCount + event.getQuantityChange();
+        }
+        if(Rune.BODY.IIIiIiiiIiiII == event.getItem().getId()) {
+            bodyCount = bodyCount + event.getQuantityChange();
+        }
+        if(Rune.EARTH.IIIiIiiiIiiII == event.getItem().getId()) {
+            earthCount = earthCount + event.getQuantityChange();
+        }
+        if(Rune.FIRE.IIIiIiiiIiiII == event.getItem().getId()) {
+            getLogger().warn("Fire : " + fireCount);
+            fireCount = fireCount + event.getQuantityChange();
+        }
+
+
+        if(event.getItem().toString().equals(Items.pureEss.toString())) {
+            System.out.println("Event Item Change: " + event.getItem().toString() + " ");
+            essCount = essCount + event.getQuantityChange();
         }
     }
 
@@ -112,7 +146,7 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
     public ObjectProperty<? extends Node> botInterfaceProperty() {
         if (botInterfaceProperty == null) {
             // Initializing configUI in this manor is known as Lazy Instantiation
-            botInterfaceProperty = new SimpleObjectProperty<>(configUI = new RCGui(this));
+//            botInterfaceProperty = new SimpleObjectProperty<>(configUI = new RCGui(this)); //todo
             infoUI = new RCInfoUI(this);
         }
         return botInterfaceProperty;

@@ -32,7 +32,7 @@ public class traverseLadder extends LeafTask {
 
         webPath = Traversal.getDefaultWeb().getPathBuilder().buildTo(Locations.ZMIOutside.getRandomCoordinate()); //todo added get random coord
 
-        if (!Locations.ZMIOutside.contains(Players.getLocal()) /*|| !ladder.isVisible()*/ ) {
+        if (!Locations.ZMIOutside.contains(Players.getLocal()) /*|| !ladder.isVisible()*/ ) { //todo: can be executed when in zmi room and null pointer
             if (webPath.step() && webPath != null) { //faster running
                 Execution.delayUntil(() -> !Players.getLocal().isMoving());
             }

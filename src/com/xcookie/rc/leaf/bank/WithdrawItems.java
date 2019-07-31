@@ -21,28 +21,43 @@ public class WithdrawItems extends LeafTask {
         getLogger().debug("Withdrawing items!");
         setDefaultQuantity(ALL);
 
-        if(Health.getCurrentPercent() <= 50) {
+        if (Health.getCurrentPercent() <= 50) {
             if (Bank.isOpen() && Bank.containsAnyOf("Salmon", "Shark", "Monkfish", "Lobster", "Swordfish")) {
                 Bank.withdraw("Salmon", 5);
                 Bank.withdraw("Shark", 5);
                 Bank.withdraw("Monkfish", 5);
                 Bank.withdraw("Lobster", 5);
-                Bank.withdraw( "Swordfish", 5);
+                Bank.withdraw("Swordfish", 5);
 
             }
         }
-
-        if(Traversal.getRunEnergy() < 50 && Traversal.isStaminaEnhanced()) {
+/*
+        if(Traversal.getRunEnergy() < 50 && !Traversal.isStaminaEnhanced()) {
             if(Bank.containsAnyOf("Stamina", "Energy")) {
-                Bank.withdraw("Stamina potion (4)", 1);
-                Bank.withdraw("Stamina potion (3)", 1);
-                Bank.withdraw("Stamina potion (2)", 1);
+//                Bank.withdraw("Stamina potion (4)", 1);
+//                Bank.withdraw("Stamina potion (3)", 1);
+//                Bank.withdraw("Stamina potion (2)", 1);
                 Bank.withdraw("Stamina potion (1)", 1);
             }
         }
+*/
+
 
         if (!Inventory.contains("Pure essence")) {
-            if ( Bank.isOpen()) {
+            if (Bank.isOpen()) {
+                if (Traversal.getRunEnergy() < 50 && !Traversal.isStaminaEnhanced()) {
+                    if (Bank.containsAnyOf(12631)) {
+                        getLogger().fine("Withdrawing stamina pot");
+                        Bank.withdraw("Stamina potion(1)", 1);
+                    } else if (Bank.containsAnyOf(3008)) {
+                        getLogger().fine("Withdrawing energy pot");
+                        Bank.withdraw("Energy potion(4)", 1);
+                    } else if (Bank.containsAnyOf(3016)) {
+                        getLogger().fine("Withdrawing super energy pot");
+                        Bank.withdraw("Super energy(4)", 1);
+                    }
+                }
+
                 Bank.withdraw("Pure essence", 28);
             } else {
                 Bank.open();

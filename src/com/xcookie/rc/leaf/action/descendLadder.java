@@ -25,6 +25,7 @@ public class descendLadder extends LeafTask {
     private final String action = "Climb";
     public static Coordinate ladderCoord = new Coordinate(2452 + 1, 3231, 0); // + 1 so i can walk there
     GameObject chaosAltar, ladder;
+    public boolean hasPrayed = false;
 
     @Override
     public void execute() {
@@ -32,16 +33,18 @@ public class descendLadder extends LeafTask {
         chaosAltar = GameObjects.newQuery().on(new Coordinate(2454, 3231, 0)).results().first();
         ladder = GameObjects.newQuery().on(new Coordinate(2452, 3231, 0)).actions("Climb").results().first();
 
-        if(chaosAltar != null && Prayer.getPoints() < Prayer.getMaximumPoints() - 10) { //commented for now cause api fucked?
+        if(chaosAltar != null && Prayer.getPoints() < Prayer.getMaximumPoints() - 10/* && !hasPrayed*/) { //todo commented for now cause api fucked?
             if(!chaosAltar.isVisible()) {
-                getLogger().debug("turning camera to ladder");
+                getLogger().debug("turning camera to altar");
                 Camera.concurrentlyTurnTo(chaosAltar);
             }
-            getLogger().info("Trying to descend ladder");
+            getLogger().info("Trying to pray at altar");
 //            chaosAltar.interact("Pray-at");
 //            Execution.delay(1000);
-            if(chaosAltar.interact("Pray-at"))
+            if(chaosAltar.interact("Pray-at")) {
                 Execution.delayUntil(() -> Prayer.getPoints() >= Prayer.getMaximumPoints() - 10 || Locations.ZMIRoom.contains(Players.getLocal()));
+                hasPrayed = true;
+            }
         }
 
         if (ladder != null) {

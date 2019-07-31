@@ -2,15 +2,13 @@ package com.xcookie.rc.assets;
 
 public class Runes {
 
-    int airCount;
-    int astralCount;
-    int bloodCount;
-    int bodyCount;
-    int chaosCount;
-    int cosmicCount;
-    int deathCount;
-    int earthCount, fireCount, lavaCount, lawCount, mindCount, mistCount, natureCount, soulCount, waterCount;
+    //basic runes
+    public static int airCount, bodyCount, earthCount, fireCount, mindCount, waterCount ;
 
-    int smokeCount, steamCount, mudCount, dustCount;
+    //other
+    public static int astralCount,  bloodCount, chaosCount, cosmicCount, deathCount, lawCount, natureCount, soulCount;
+
+    //mixed
+    public static int smokeCount, steamCount, mudCount, dustCount, lavaCount, mistCount;
 
 }

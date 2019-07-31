@@ -13,11 +13,13 @@ import com.runemate.game.api.script.framework.tree.LeafTask;
 public class CraftRunes extends LeafTask {
 
     private GameObject altar;
+    private descendLadder descendladder = new descendLadder();
 
     @Override
     public void execute() {
         altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059,5578,0)).results().first();
         if(!altar.isVisible()) {
+            descendladder.hasPrayed = false;
 /*            if (Locations.ZMIRCAltar.contains(Players.getLocal())) {
                 new CraftRunes();
             }*/

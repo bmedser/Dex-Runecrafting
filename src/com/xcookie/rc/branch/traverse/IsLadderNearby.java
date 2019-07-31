@@ -4,6 +4,7 @@ import com.runemate.game.api.hybrid.region.Players;
 import com.runemate.game.api.script.framework.tree.BranchTask;
 import com.runemate.game.api.script.framework.tree.TreeTask;
 import com.xcookie.rc.assets.Locations;
+import com.xcookie.rc.branch.chat.IsTalkingToMage;
 import com.xcookie.rc.leaf.action.descendLadder;
 import com.xcookie.rc.leaf.traverse.traverseLadder;
 
@@ -16,6 +17,7 @@ public class IsLadderNearby extends BranchTask {
 
     private descendLadder descendladder = new descendLadder();
     private traverseLadder traverseladder = new traverseLadder();
+    private IsTalkingToMage isTalkingToWizard = new IsTalkingToMage();
 
     @Override
     public boolean validate() {
@@ -29,6 +31,6 @@ public class IsLadderNearby extends BranchTask {
 
     @Override
     public TreeTask successTask() { //TODO: fix make a call not new
-        return descendladder;
+        return isTalkingToWizard;
     }
 }
