@@ -76,6 +76,7 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
     @Override
     public TreeTask createRootTask() {
+//        updateInfo();
 //        Execution.delay(2000); //todo: length between each tree loop
         return root;
     }
@@ -182,7 +183,8 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
         if (botInterfaceProperty == null) {
             // Initializing configUI in this manor is known as Lazy Instantiation
 //            botInterfaceProperty = new SimpleObjectProperty<>(configUI = new RCGui(this)); //todo
-            infoUI = new RCInfoUI(this);
+//            botInterfaceProperty = new SimpleObjectProperty<>(infoUI = new RCInfoUI(this)); //todo
+//            infoUI = new RCInfoUI(this);
         }
         return botInterfaceProperty;
     }
@@ -195,13 +197,13 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
     public void updateInfo() {
         try {
             // Assign all values to a new instance of the Info class
-/*
+
             info = new Info(
                     (int) CommonMath.rate(TimeUnit.HOURS, stopWatch.getRuntime(), essCount),  //   -   -   -   -   -   -   -   // Flax per hour
                     essCount,                //    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   // Essence Picked
                     stopWatch.getRuntimeAsString(),                 //  -   -   -   -   -   -   -   -   -   -   -   -   -   -   // Total Runtime
                     currentTaskString);       //    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   // Current Task
-*/
+
 
         } catch (NullPointerException e) {
             e.printStackTrace();
@@ -209,6 +211,6 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
 
         // Be sure to run infoUI.update() through runLater.
         // This will run infoUI.update() on the dedicated JavaFX thread which is the only thread allowed to update anything related to JavaFX rendering
-        Platform.runLater(() -> infoUI.update());
+//        Platform.runLater(() -> infoUI.update());
     }
 }

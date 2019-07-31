@@ -82,4 +82,37 @@ public class Locations {
             new Coordinate(3053, 5587, 0) //outside enter hole
     };
 
+    Coordinate[] teleportAreaToLadder = {
+            new Coordinate(2467, 3247, 0),
+            new Coordinate(2467, 3247, 0),
+            new Coordinate(2466, 3248, 0),
+            new Coordinate(2465, 3248, 0),
+            new Coordinate(2464, 3249, 0),
+            new Coordinate(2463, 3249, 0),
+            new Coordinate(2462, 3249, 0),
+            new Coordinate(2461, 3249, 0),
+            new Coordinate(2460, 3249, 0),
+            new Coordinate(2459, 3249, 0),
+            new Coordinate(2458, 3249, 0),
+            new Coordinate(2457, 3249, 0),
+            new Coordinate(2456, 3249, 0),
+            new Coordinate(2455, 3249, 0),
+            new Coordinate(2455, 3248, 0),
+            new Coordinate(2455, 3247, 0),
+            new Coordinate(2455, 3246, 0),
+            new Coordinate(2454, 3245, 0),
+            new Coordinate(2454, 3244, 0),
+            new Coordinate(2454, 3243, 0),
+            new Coordinate(2454, 3242, 0),
+            new Coordinate(2454, 3241, 0),
+            new Coordinate(2454, 3240, 0),
+            new Coordinate(2454, 3239, 0),
+            new Coordinate(2454, 3238, 0),
+            new Coordinate(2454, 3237, 0),
+            new Coordinate(2454, 3236, 0),
+            new Coordinate(2454, 3235, 0),
+            new Coordinate(2454, 3234, 0),
+            new Coordinate(2454, 3233, 0),
+            new Coordinate(2454, 3232, 0)
+    };
 }

@@ -4,8 +4,11 @@ import com.runemate.game.api.hybrid.entities.GameObject;
 import com.runemate.game.api.hybrid.local.Camera;
 import com.runemate.game.api.hybrid.location.Coordinate;
 import com.runemate.game.api.hybrid.region.GameObjects;
+import com.runemate.game.api.hybrid.region.Players;
+import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
 import com.xcookie.rc.Main;
+import com.xcookie.rc.assets.Locations;
 
 /**
  * NOTES:
@@ -32,6 +35,9 @@ public class CraftRunes extends LeafTask {
             }*/
             Camera.concurrentlyTurnTo(altar);
         }
-        altar.interact("Craft-rune");
+
+        if(altar.interact("Craft-rune")) { //reminder
+            Execution.delay(150, 800, 360);
+        }
     }
 }

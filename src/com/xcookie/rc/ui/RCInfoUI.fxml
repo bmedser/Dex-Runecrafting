@@ -59,7 +59,7 @@
                         <Insets right="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="FlaxCount_L" text="??" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Label fx:id="EssCount_L" text="??" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <padding>
                         <Insets left="3.0" />
                     </padding>

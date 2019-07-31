@@ -28,7 +28,7 @@ public class RCInfoUI  extends GridPane implements Initializable {
 
     public RCInfoUI(Main bot) {
         this.bot = bot;
-
+//        CurrentTask_L.setText(new Main().getCurrentTaskString());
         // Load the fxml file using RuneMate's resources class.
         FXMLLoader loader = new FXMLLoader();
 

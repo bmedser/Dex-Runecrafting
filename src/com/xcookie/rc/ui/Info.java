@@ -2,7 +2,7 @@ package com.xcookie.rc.ui;
 
 public class Info {
 
-    public int[] collectedRunes;
+    public int collectedRunes;
 
     public int essPh, essCount;
     public String runTime, currentTask;
@@ -14,8 +14,8 @@ public class Info {
         this.currentTask = "";
     }*/
 
-    public Info(int flaxPh, int[] collectedRunes, String runTime, String currentTask) {
-        this.essPh = flaxPh;
+    public Info(int essPh, int collectedRunes, String runTime, String currentTask) {
+        this.essPh = essPh;
         this.collectedRunes = collectedRunes;
         this.runTime = runTime;
         this.currentTask = currentTask;

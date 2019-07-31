@@ -58,7 +58,9 @@ public class descendLadder extends LeafTask {
                 Camera.setZoom(0.1, 0.2);
             }
             getLogger().info("Trying to descend ladder");
-            ladder.interact("Climb"); //fix todo
+            if(ladder.interact("Climb")) { //fix todo
+                Execution.delay(150, 800, 320);
+            }
         }
     }
 }
