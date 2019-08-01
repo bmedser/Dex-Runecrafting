@@ -1,6 +1,8 @@
 package com.xcookie.rc.leaf.traverse;
 
 import com.runemate.game.api.hybrid.entities.GameObject;
+import com.runemate.game.api.hybrid.local.hud.interfaces.InterfaceComponent;
+import com.runemate.game.api.hybrid.local.hud.interfaces.InterfaceWindows;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Inventory;
 import com.runemate.game.api.hybrid.local.hud.interfaces.SpriteItem;
 import com.runemate.game.api.hybrid.location.Coordinate;
@@ -17,6 +19,8 @@ import com.xcookie.rc.Main;
 import com.xcookie.rc.assets.Locations;
 import com.xcookie.rc.leaf.StopBot;
 
+import java.util.List;
+
 import static com.runemate.game.api.hybrid.local.hud.interfaces.Inventory.newQuery;
 
 /**
@@ -24,7 +28,8 @@ import static com.runemate.game.api.hybrid.local.hud.interfaces.Inventory.newQue
  * Start walking to altar
  */
 public class traverseAltar extends LeafTask {
-
+    private Prayer prayer;
+    private InterfaceComponent openQuickPrayerMenu;
     private RegionPath pathToAltar;
     private WebPath webPath;
     private GameObject altar = GameObjects.newQuery().ids(29631).on(new Coordinate(3059, 5578, 0)).results().nearest();
@@ -70,10 +75,29 @@ public class traverseAltar extends LeafTask {
                 }
 
                 //Protect from range //TODO:
-                if (!Prayer.PROTECT_FROM_MISSILES.isActivated() || !Prayer.RAPID_HEAL.isActivated()) {
+                if (!Prayer.isQuickPraying()) {
+                    List<Prayer> quickprayers = Prayer.getSelectedQuickPrayers();
+                    if (!quickprayers.contains(Prayer.PROTECT_FROM_MISSILES) && !quickprayers.contains(Prayer.RAPID_HEAL)) {
+                        if (!Prayer.isQuickPrayerSetupOpen()) {
+                            //open quick prayers
+
+                            Prayer.setQuickPrayers(Prayer.PROTECT_FROM_MISSILES, Prayer.RAPID_HEAL);
+                            getLogger().debug("Trying to setup quick prayers");
+
+                        } else { //its open, customise them
+//                            Prayer.setQuickPrayers(Prayer.PROTECT_FROM_MISSILES, Prayer.RAPID_HEAL);
+                            Prayer.confirmQuickPrayerSelection();
+                        }
+                    } else {
+                        //if quick prayers already contain protect from range and rapid heal... activate!
+                        Prayer.toggleQuickPrayers();
+                    }
+                }
+
+/*                if (!Prayer.PROTECT_FROM_MISSILES.isActivated() || !Prayer.RAPID_HEAL.isActivated()) {
                     Prayer.PROTECT_FROM_MISSILES.activate();
                     Prayer.RAPID_HEAL.activate();
-                }
+                }*/
 
                 if (webPath != null)
                     webPath.step();

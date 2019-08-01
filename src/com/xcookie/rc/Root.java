@@ -2,6 +2,7 @@ package com.xcookie.rc;
 
 import com.runemate.game.api.script.framework.tree.BranchTask;
 import com.runemate.game.api.script.framework.tree.TreeTask;
+import com.xcookie.rc.branch.IsOnWorld;
 import com.xcookie.rc.branch.traverse.IsInZMI;
 import com.xcookie.rc.branch.traverse.IsLadderNearby;
 
@@ -16,6 +17,7 @@ Always return true
 public class Root extends BranchTask {
 
     private IsInZMI isinzmi = new IsInZMI();
+    private IsOnWorld hop;
     private IsLadderNearby isLadderNearby = new IsLadderNearby();
 
     @Override
@@ -32,6 +34,6 @@ public class Root extends BranchTask {
 
     @Override
     public TreeTask successTask() {
-        return isinzmi;
+        return hop;
     }
 }

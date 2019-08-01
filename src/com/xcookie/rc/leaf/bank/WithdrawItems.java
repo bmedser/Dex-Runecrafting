@@ -5,6 +5,7 @@ import com.runemate.game.api.hybrid.local.hud.interfaces.Health;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Inventory;
 import com.runemate.game.api.hybrid.location.navigation.Traversal;
 import com.runemate.game.api.hybrid.region.Players;
+import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
 import com.xcookie.rc.Main;
 
@@ -48,7 +49,7 @@ public class WithdrawItems extends LeafTask {
 
         if (!Inventory.contains("Pure essence")) {
             if (Bank.isOpen()) {
-                if (Traversal.getRunEnergy() < 50 && !Traversal.isStaminaEnhanced()) {
+                if (Traversal.getRunEnergy() < 70 && !Traversal.isStaminaEnhanced()) {
                     if (Bank.containsAnyOf(12631)) {
                         getLogger().fine("Withdrawing stamina pot");
                         Bank.withdraw("Stamina potion(1)", 1);
@@ -63,6 +64,7 @@ public class WithdrawItems extends LeafTask {
                             Bank.withdraw("Super energy(4)", 1);
                         }
                     }
+                    Execution.delay(100,400,300);
                 }
                 Bank.withdraw("Pure essence", 28);
             } else {

@@ -35,7 +35,8 @@ public class traverseLadder extends LeafTask {
 
         webPath = Traversal.getDefaultWeb().getPathBuilder().buildTo(Locations.ZMIOutside.getRandomCoordinate()); //todo added get random coord
         try {
-            if (/*!Locations.ZMIOutside.contains(Players.getLocal()) &&*/ webPath.step() && webPath != null /*|| !ladder.isVisible()*/ ) { //todo: can be executed when in zmi room and null pointer
+//        	if(!Locations.ZMIRoom.contains ( Players.getLocal ()) || new Objects().ladderEntry.distanceTo ( Players.getLocal ().getPosition () )) {
+            if (/*!Locations.ZMIOutside.contains(Players.getLocal()) &&*/ webPath.step() && webPath != null/*|| !ladder.isVisible()*/ ) { //todo: can be executed when in zmi room and null pointer
                 Execution.delayUntil(() -> !Players.getLocal().isMoving());
 
             }
