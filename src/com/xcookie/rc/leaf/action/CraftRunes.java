@@ -37,7 +37,7 @@ public class CraftRunes extends LeafTask {
         }
 
         if(altar.interact("Craft-rune")) { //reminder
-            Execution.delay(150, 800, 360);
+            Execution.delay(150, 400, 160);
         }
     }
 }

@@ -51,6 +51,9 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
     public String currentTaskString;
 
 
+    public double warningHp = 25;
+
+
 //    public TraversalLocation traversalLocation = TraversalLocation.flaxArea;
 
     /** TODO
@@ -213,4 +216,13 @@ public class Main extends TreeBot implements EmbeddableUI, InventoryListener {
         // This will run infoUI.update() on the dedicated JavaFX thread which is the only thread allowed to update anything related to JavaFX rendering
 //        Platform.runLater(() -> infoUI.update());
     }
+
+    public double getWarningHp() {
+        return warningHp;
+    }
+
+    public void setWarningHp(double warningHp) {
+        this.warningHp = warningHp;
+    }
+
 }

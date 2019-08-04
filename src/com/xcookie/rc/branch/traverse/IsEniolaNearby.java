@@ -27,7 +27,7 @@ public class IsEniolaNearby extends BranchTask {
         getLogger().debug("is eniola nearby?");
 //        npc = Npcs.newQuery().filter(npc -> npc.getDefinition() != null && npc.getDefinition().getId() == 7417);
 //        if(npc.Eniola == null)
-            return new Area.Circular(NPC.bankCoord, 15).contains(Players.getLocal());
+            return (new Area.Circular(NPC.bankCoord, 15).contains(Players.getLocal()));
 //        return false;
     }
 

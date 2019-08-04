@@ -1,6 +1,9 @@
 package com.xcookie.rc.branch.bank;
 
+import com.runemate.game.api.hybrid.entities.Item;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Bank;
+import com.runemate.game.api.hybrid.local.hud.interfaces.Interfaces;
+import com.runemate.game.api.osrs.local.RunePouch;
 import com.runemate.game.api.script.framework.tree.BranchTask;
 import com.runemate.game.api.script.framework.tree.TreeTask;
 import com.xcookie.rc.branch.inventory.IsPouchesFull;
@@ -14,6 +17,7 @@ public class IsBankOpenHasRequired extends BranchTask {
 
     private CloseBank closeBank = new CloseBank();
     private IsPouchesFull isPouchesFull = new IsPouchesFull();
+    Item runePouch;
 
     @Override
     public boolean validate() {

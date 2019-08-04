@@ -115,4 +115,29 @@ public class Locations {
             new Coordinate(2454, 3233, 0),
             new Coordinate(2454, 3232, 0)
     };
+
+    public static Area dangerZone = new Area.Polygonal( // polyagonal of where enemies are located during walk to altar
+            new Coordinate(3009, 5619, 0),
+            new Coordinate(3018, 5619, 0),
+            new Coordinate(3023, 5613, 0),
+            new Coordinate(3019, 5605, 0),
+            new Coordinate(3020, 5601, 0),
+            new Coordinate(3022, 5594, 0),
+            new Coordinate(3020, 5589, 0),
+            new Coordinate(3021, 5582, 0),
+            new Coordinate(3029, 5582, 0),
+            new Coordinate(3032, 5584, 0),
+            new Coordinate(3047, 5584, 0),
+            new Coordinate(3050, 5581, 0),
+            new Coordinate(3052, 5581, 0),
+            new Coordinate(3052, 5574, 0),
+            new Coordinate(3050, 5573, 0),
+            new Coordinate(3044, 5574, 0),
+            new Coordinate(3033, 5569, 0),
+            new Coordinate(3027, 5569, 0),
+            new Coordinate(3025, 5572, 0),
+            new Coordinate(3014, 5569, 0),
+            new Coordinate(3009, 5569, 0),
+            new Coordinate(3009, 5618, 0)
+    );
 }

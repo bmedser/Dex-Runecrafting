@@ -12,6 +12,7 @@ import com.runemate.game.api.hybrid.location.navigation.cognizant.RegionPath;
 import com.runemate.game.api.hybrid.location.navigation.web.WebPath;
 import com.runemate.game.api.hybrid.region.GameObjects;
 import com.runemate.game.api.hybrid.region.Players;
+import com.runemate.game.api.hybrid.util.calculations.Random;
 import com.runemate.game.api.osrs.local.hud.interfaces.Prayer;
 import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
@@ -68,8 +69,13 @@ public class traverseAltar extends LeafTask {
                             ).actions("Drink").results().first();
 
 //                                Execution.delayUntil(() -> InventoryE);
+                            if(potion != null) {
+                                if(potion.interact("Drink")) {
+                                    //Wait until potion has been drank before clicking another potion
+                                    Execution.delayUntil(() -> !potion.isValid());
+                                }
+                            }
 
-                            potion.interact("Drink");
                         }
                     }
                 }
@@ -99,8 +105,16 @@ public class traverseAltar extends LeafTask {
                     Prayer.RAPID_HEAL.activate();
                 }*/
 
-                if (webPath != null)
-                    webPath.step();
+                if (webPath != null) {
+                    int rand = Random.getRandom().nextInt(20);
+                    if(webPath.step(false)) {
+                        Execution.delay(500,1000,600);
+                    }
+                    //start running if run energy between 50-70 (random) antipaterrn
+                    if(Traversal.getRunEnergy() >= 50 + rand && !Traversal.isRunEnabled()) {
+                        Traversal.toggleRun();
+                    }
+                }
             }
         } catch (NullPointerException e) {
             getLogger().severe("Cant traverse altar! very bad!");

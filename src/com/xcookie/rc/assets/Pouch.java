@@ -9,36 +9,63 @@ import static com.runemate.game.api.hybrid.Environment.getLogger;
 
 public enum Pouch implements InventoryListener {
 
-    GIANT_POUCH(0, "Giant pouch", false, 18, 5514),
-    LARGE_POUCH(1, "Large pouch", false, 12, 5512),
-    MEDIUM_POUCH(2, "Medium pouch", false, 6,5510),
-    SMALL_POUCH(3, "Small pouch", false, 3,5509);
+    /**
+     * spriteitem giant pouch
+     *
+     * if(giantpouch.interact("Fill"))
+     * 	if event.getQuantityChange == 18
+     * 		giant pouch.isfull =  true
+     * 	else
+     * 		giant pouch.isfull = false
+     *
+     */
+
+    GIANT_POUCH("Giant pouch", false, 18, 5514),
+    LARGE_POUCH("Large pouch", false, 12, 5512),
+    MEDIUM_POUCH( "Medium pouch", false, 6, 5510),
+    SMALL_POUCH("Small pouch", false, 3, 5509);
 
     Items items;
     Settings s = new Settings();
 
-    Pouch(int index, String name, boolean isFull, int capacity, int ids) {
-        this.index = index;
+    Pouch(String name, boolean isFull, int capacity, int ids) {
         this.name = name;
         this.isFull = isFull;
         this.capacity = capacity;
         this.ids = ids;
     }
 
-    //Variables
-    private final int index;
-    private final String name;
-    private boolean isFull;
-    private final int ids;
-    private int id;
-    private final String fill = "Fill";
 
-    /**How much essence can be held within the pouch*/
-    private final int capacity;
+
+    //Variables
+    private int index;
+    private String name;
+    private boolean isFull;
+    private int ids;
+    private String fill = "Fill";
+    public static int avaliablePouches = 4;
+
+    /**
+     * How much essence can be held within the pouch
+     */
+    private int capacity;
+
+    public void Pouch(Boolean isFull) {
+        this.isFull = isFull;
+//        pouch = pouch(pouch.getIndex(), pouch.getName(), isFull, pouch.getCapacity(), pouch.getIds());
+    }
 
     public void fill(Pouch pouch) { //TODO: fill(GIANT_POUCH)
         SpriteItem tempPouch = new SpriteItem(pouch.getIds(), 1);
         tempPouch.interact(fill);
+    }
+
+    public void setPouchFilled(Pouch pouch) {
+        boolean isFull = true;
+        pouch.isFull = isFull;
+        getLogger().severe(pouch.toString() + " is full");
+//        this.pouch = pouch.isFull;
+//        pouch(pouch.getIds(), pouch.getName(), pouch.isFull)
     }
 
     @Override
@@ -55,46 +82,38 @@ public enum Pouch implements InventoryListener {
 
     }
 
-    public void setPouchFilled(Pouch pouch) {
-
-    }
-
 
     @Override
     public void onItemRemoved(ItemEvent event) {
 
-        if(capacity == event.getQuantityChange()) {
+        if (capacity == event.getQuantityChange()) {
             getLogger().fine("Successfully filled " + getName());
             isFull = true;
         }
-        if(event.getItem() == items.pureEss) {
 
-        }
-        //get pouched that was clicked, IF pouch removed its capacity it is full, otherwise return false, this way it keeps trying to fill up
+/*        //get pouched that was clicked, IF pouch removed its capacity it is full, otherwise return false, this way it keeps trying to fill up
         if(event.getItem().toString().equals("Pure essence") && event.getQuantityChange() == getCapacity()) {
 
-        }
+        }*/
 
-        switch(event.getQuantityChange()) {
-            case 3: // small
-                setPouchFilled(SMALL_POUCH);
-                break;
-            case 6: //medium
-                setPouchFilled(MEDIUM_POUCH);
-                break;
-            case 12: //large
-                setPouchFilled(LARGE_POUCH);
-                break;
-            case 18: //giant
-                setPouchFilled(GIANT_POUCH);
-                break;
-            default:
-                break;
+        if (event.getItem().getId() == Items.pureEss.getId()) {
+            switch (event.getQuantityChange()) {
+                case 3: // small
+                    setPouchFilled(SMALL_POUCH);
+                    break;
+                case 6: //medium
+                    setPouchFilled(MEDIUM_POUCH);
+                    break;
+                case 12: //large
+                    setPouchFilled(LARGE_POUCH);
+                    break;
+                case 18: //giant
+                    setPouchFilled(GIANT_POUCH);
+                    break;
+                default:
+                    break;
+            }
         }
-    }
-
-    public int getIndex() {
-        return index;
     }
 
     public String getName() {
@@ -108,6 +127,7 @@ public enum Pouch implements InventoryListener {
     public int getCapacity() {
         return capacity;
     }
+
     public int getIds() {
         return ids;
     }

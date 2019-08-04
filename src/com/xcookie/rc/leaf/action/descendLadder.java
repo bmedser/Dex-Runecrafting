@@ -25,7 +25,7 @@ public class descendLadder extends LeafTask {
     private Objects objects;
     private final String action = "Climb";
     public static Coordinate ladderCoord = new Coordinate(2452 + 1, 3231, 0); // + 1 so i can walk there
-    GameObject chaosAltar, ladder;
+    private GameObject chaosAltar, ladder;
     public boolean hasPrayed = false;
 
     @Override
@@ -59,7 +59,7 @@ public class descendLadder extends LeafTask {
             }
             getLogger().info("Trying to descend ladder");
             if(ladder.interact("Climb")) { //fix todo
-                Execution.delay(150, 800, 320);
+                Execution.delay(150, 400, 220);
             }
         }
     }

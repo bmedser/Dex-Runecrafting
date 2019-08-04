@@ -5,6 +5,8 @@ import com.runemate.game.api.hybrid.local.Skill;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Equipment;
 import com.runemate.game.api.hybrid.local.hud.interfaces.InterfaceWindows;
 import com.runemate.game.api.hybrid.location.Area;
+import com.runemate.game.api.hybrid.location.Coordinate;
+import com.runemate.game.api.hybrid.location.navigation.Path;
 import com.runemate.game.api.hybrid.location.navigation.cognizant.RegionPath;
 import com.runemate.game.api.hybrid.region.Players;
 import com.runemate.game.api.osrs.local.RunePouch;
@@ -13,6 +15,7 @@ import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
 import com.xcookie.rc.Main;
 import com.xcookie.rc.assets.Locations;
+import com.xcookie.rc.assets.NPC;
 import com.xcookie.rc.leaf.StopBot;
 
 /**
@@ -21,12 +24,13 @@ import com.xcookie.rc.leaf.StopBot;
  */
 public class traverseEniola extends LeafTask {
 
+    private Path p;
     private RegionPath pathToEniola;
 
     public boolean canUseOuraniaTeleport() {
         return RunePouch.getQuantity(Rune.LAW) >= 1 &&
                 RunePouch.getQuantity(Rune.ASTRAL) >= 2 &&
-                (RunePouch.getQuantity(Rune.EARTH) >= 6) || Equipment.containsAnyOf("Earth battlestaff", "Earth staff") &&
+                (RunePouch.getQuantity(Rune.EARTH) >= 6) || Equipment.containsAnyOf("Earth battlestaff", "Earth staff", "Staff of earth") &&
                 Skill.MAGIC.getCurrentLevel() >= 71;
     }
 
@@ -62,6 +66,13 @@ public class traverseEniola extends LeafTask {
             //Manually walk back to bank, used by skillers and low leveled players...
             try {
                 pathToEniola = RegionPath.buildTo(Locations.ZMIBank);
+
+                if(Players.getLocal().getPosition() == NPC.bankCoord) { //if playeris standing on bank, he cant open.
+                    Coordinate c = new Coordinate(3013, 5627, 0);
+                    p = RegionPath.buildTo(c);
+                    if(p != null)
+                        p.step();
+                }
 
                 if (pathToEniola.step()) {
                     //so it doesnt run around the entire zmi ladder and look obv like a bot...

@@ -3,11 +3,14 @@ package com.xcookie.rc.leaf.bank;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Bank;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Health;
 import com.runemate.game.api.hybrid.local.hud.interfaces.Inventory;
+import com.runemate.game.api.hybrid.local.hud.interfaces.SpriteItem;
 import com.runemate.game.api.hybrid.location.navigation.Traversal;
 import com.runemate.game.api.hybrid.region.Players;
 import com.runemate.game.api.script.Execution;
 import com.runemate.game.api.script.framework.tree.LeafTask;
 import com.xcookie.rc.Main;
+
+import java.util.concurrent.Callable;
 
 import static com.runemate.game.api.hybrid.local.hud.interfaces.Bank.*;
 import static com.runemate.game.api.hybrid.local.hud.interfaces.Bank.DefaultQuantity.ALL;
@@ -20,6 +23,8 @@ public class WithdrawItems extends LeafTask {
 
     @Override
     public void execute() {
+
+
         new Main().setCurrentTaskString("Withdrawing items");
         getLogger().debug("Withdrawing items!");
 
@@ -50,6 +55,7 @@ public class WithdrawItems extends LeafTask {
         if (!Inventory.contains("Pure essence")) {
             if (Bank.isOpen()) {
                 if (Traversal.getRunEnergy() < 70 && !Traversal.isStaminaEnhanced()) {
+
                     if (Bank.containsAnyOf(12631)) {
                         getLogger().fine("Withdrawing stamina pot");
                         Bank.withdraw("Stamina potion(1)", 1);
@@ -64,7 +70,7 @@ public class WithdrawItems extends LeafTask {
                             Bank.withdraw("Super energy(4)", 1);
                         }
                     }
-                    Execution.delay(100,400,300);
+//                    Execution.delay(100,400,300);
                 }
                 Bank.withdraw("Pure essence", 28);
             } else {

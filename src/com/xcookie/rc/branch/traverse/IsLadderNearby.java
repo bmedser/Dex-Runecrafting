@@ -1,5 +1,8 @@
 package com.xcookie.rc.branch.traverse;
 
+import com.runemate.game.api.hybrid.entities.GameObject;
+import com.runemate.game.api.hybrid.location.Coordinate;
+import com.runemate.game.api.hybrid.region.GameObjects;
 import com.runemate.game.api.hybrid.region.Players;
 import com.runemate.game.api.script.framework.tree.BranchTask;
 import com.runemate.game.api.script.framework.tree.TreeTask;
@@ -17,10 +20,16 @@ public class IsLadderNearby extends BranchTask {
 
     private traverseLadder traverseladder = new traverseLadder();
     private IsTalkingToMage isTalkingToWizard = new IsTalkingToMage();
+    GameObject chaosAltar = GameObjects.newQuery().on(new Coordinate(2454, 3231, 0)).results().first();
+    GameObject ladder = GameObjects.newQuery().on(new Coordinate(2452, 3231, 0)).results().nearest();;
 
     @Override
     public boolean validate() {
-        return Locations.ZMIOutside.contains(Players.getLocal());
+        ladder = GameObjects.newQuery().on(new Coordinate(2452, 3231, 0)).results().nearest();
+        chaosAltar = GameObjects.newQuery().on(new Coordinate(2454, 3231, 0)).results().first();
+
+//        return ladder.isVisible();
+            return Locations.ZMIOutside.contains(Players.getLocal());
     }
 
     @Override

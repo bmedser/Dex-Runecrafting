@@ -32,13 +32,13 @@ public class traverseLadder extends LeafTask {
 
         getLogger().info("traverse ladder");
         ladder = GameObjects.newQuery().on(new Coordinate(2452, 3231, 0)).results().nearest();
-
         webPath = Traversal.getDefaultWeb().getPathBuilder().buildTo(Locations.ZMIOutside.getRandomCoordinate()); //todo added get random coord
-        try {
-//        	if(!Locations.ZMIRoom.contains ( Players.getLocal ()) || new Objects().ladderEntry.distanceTo ( Players.getLocal ().getPosition () )) {
-            if (/*!Locations.ZMIOutside.contains(Players.getLocal()) &&*/ webPath.step() && webPath != null/*|| !ladder.isVisible()*/ ) { //todo: can be executed when in zmi room and null pointer
-                Execution.delayUntil(() -> !Players.getLocal().isMoving());
 
+        try {
+//            if(!Locations.ZMIRoom.contains ( Players.getLocal ()) || new Objects().ladderEntry.distanceTo ( Players.getLocal ().getPosition () )) {
+//            if (/*!Locations.ZMIOutside.contains(Players.getLocal()) &&*/ webPath.step() && webPath != null/*|| !ladder.isVisible()*/ ) { //todo: can be executed when in zmi room and null pointer
+            if (webPath.step() && webPath != null) {
+                Execution.delayUntil(() -> !Players.getLocal().isMoving());
             }
         } catch(NullPointerException e) {
             e.printStackTrace();
